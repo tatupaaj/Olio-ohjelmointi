@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "t1", "t1\t1.csproj", "{6D1C0FD6-9960-45CA-9DE8-EE95D459AD4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "esimerkki", "esimerkki\esimerkki.csproj", "{9B6EC6A0-E848-4334-98C6-A333F3069ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "esimerkkiTests", "esimerkkiTests\esimerkkiTests.csproj", "{A04EA846-6AFF-48F4-B6C7-95D5B1DD7BD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6D1C0FD6-9960-45CA-9DE8-EE95D459AD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D1C0FD6-9960-45CA-9DE8-EE95D459AD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D1C0FD6-9960-45CA-9DE8-EE95D459AD4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6EC6A0-E848-4334-98C6-A333F3069ECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6EC6A0-E848-4334-98C6-A333F3069ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6EC6A0-E848-4334-98C6-A333F3069ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6EC6A0-E848-4334-98C6-A333F3069ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A04EA846-6AFF-48F4-B6C7-95D5B1DD7BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04EA846-6AFF-48F4-B6C7-95D5B1DD7BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04EA846-6AFF-48F4-B6C7-95D5B1DD7BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04EA846-6AFF-48F4-B6C7-95D5B1DD7BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
