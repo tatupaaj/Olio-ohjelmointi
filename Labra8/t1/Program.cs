@@ -10,6 +10,13 @@ namespace t1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("How many times you want to throw a dice");
+            int numero = Int32.Parse(Console.ReadLine());
+            Random rnd = new Random();
+            for (int i = 0; i < numero; i++)
+            {
+
+            }
         }
     }
 }
