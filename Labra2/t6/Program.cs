@@ -14,7 +14,7 @@ namespace t6
             TestaaMikro();
         }
 
-        static void TestaaMikro()
+        static void TestaaMikro)
         {
             Mikro mikro = new Mikro();
             mikro.Onkopaalla = true;
