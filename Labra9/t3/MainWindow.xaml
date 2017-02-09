@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:t3"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="725" FontSize="20">
-    <Grid>
+    <Grid Background="#FFFDEAD4">
         <Rectangle Fill="#FF732D0B" HorizontalAlignment="Left" Height="194" Margin="29,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="244"/>
         <Rectangle Fill="#FFFCFAFA" HorizontalAlignment="Left" Height="160" Margin="43,108,0,0" Stroke="Black" VerticalAlignment="Top" Width="213"/>
         <Line X1="120" Y1="93" X2="120" Y2="284" Stroke="Black" StrokeThickness="2" />
@@ -30,7 +30,7 @@
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="51" Margin="305,72,0,0" TextWrapping="Wrap" Text="Ikkunan leveys (L):" VerticalAlignment="Top" Width="203"/>
         <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="51" Margin="305,133,0,0" TextWrapping="Wrap" Text="Ikkunan korkeus (H):" VerticalAlignment="Top" Width="203"/>
         <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="51" Margin="305,197,0,0" TextWrapping="Wrap" Text="Karmipuun leveys (W):" VerticalAlignment="Top" Width="203"/>
-        <Button x:Name="button" Content="Laske" HorizontalAlignment="Left" Height="44" Margin="345,259,0,0" VerticalAlignment="Top" Width="98" Click="button_Click"/>
+        <Button x:Name="button" Content="Laske" HorizontalAlignment="Left" Height="44" Margin="345,259,0,0" VerticalAlignment="Top" Width="98" Click="button_Click" Background="#FF83F7ED"/>
         <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="51" Margin="305,332,0,0" TextWrapping="Wrap" Text="Ikkunan pinta-ala:" VerticalAlignment="Top" Width="203"/>
         <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="51" Margin="305,398,0,0" TextWrapping="Wrap" Text="Lasin pinta-ala:" VerticalAlignment="Top" Width="203"/>
         <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Height="51" Margin="305,449,0,0" TextWrapping="Wrap" Text="Karmiin piiri:" VerticalAlignment="Top" Width="203"/>
