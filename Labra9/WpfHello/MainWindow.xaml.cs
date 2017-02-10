@@ -36,9 +36,10 @@ namespace WpfHello
         private void button_Click(object sender, RoutedEventArgs e)
         {
             textBlock.Text = "Hello " + textBox.Text;
-            //MessageBox.Show(textBox.Text + "ei ole koulussa. Virhe! ", "Katia's Messut");
             laskuri++;
             textBlock1.Text = laskuri.ToString();
+            //ilmoitus tilariville
+            txbMessages.Text = "Painoit buttosta btnSayHello";
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
