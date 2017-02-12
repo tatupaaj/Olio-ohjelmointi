@@ -73,7 +73,7 @@ namespace t3
             string tmp = "";
             foreach (string s in draws)
             {
-                tmp = tmp  + s + "\n";
+                tmp = tmp + s + "\n";
             }
             return tmp;
         }
@@ -89,11 +89,11 @@ namespace t3
         private void draw_Click(object sender, RoutedEventArgs e)
         {
 
-                Lotto lotto = new Lotto();
-                lotto.Index = Int32.Parse(comboBox.SelectedIndex.ToString());
-                lotto.Maara = Int32.Parse(textBox.Text);
-                lotto.Numerot();
-                sv.Content = lotto.Print();
+            Lotto lotto = new Lotto();
+            lotto.Index = Int32.Parse(comboBox.SelectedIndex.ToString());
+            lotto.Maara = Int32.Parse(textBox.Text);
+            lotto.Numerot();
+            sv.Content = lotto.Print();
         }
 
         private void clear_Click(object sender, RoutedEventArgs e)
