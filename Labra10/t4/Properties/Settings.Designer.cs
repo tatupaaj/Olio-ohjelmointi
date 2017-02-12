@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Labra10.Properties
+namespace t4.Properties
 {
 
 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace esim.Properties
+namespace t2.Properties
 {
 
 

@@ -16,7 +16,7 @@
         <StackPanel VerticalAlignment="Bottom"  Height="150">
             <Button x:Name="button" Content="Buy"  Click="button_Click" Height="27" Margin="38,10,415.4,0" FontSize="15"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="30,10,0,0" TextWrapping="Wrap" Text="Shopping list:" VerticalAlignment="Top" FontSize="15" Width="97" Height="28"/>
-            <TextBox x:Name="txtBox" TextWrapping="Wrap" Text="" Height="27" Margin="0,10,0.4,0"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="" Height="27" Margin="38,10,53.4,0"/>
         </StackPanel>
         
     </Grid>

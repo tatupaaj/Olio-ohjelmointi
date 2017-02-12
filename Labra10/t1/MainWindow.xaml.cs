@@ -38,7 +38,7 @@ namespace t1
 
                 }
             }
-            txtBox.Text = items;
+            textBlock1.Text = items;
 
         }
     }
