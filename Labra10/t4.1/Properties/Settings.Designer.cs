@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace t4.Properties
+namespace t4._1.Properties
 {
 
 
