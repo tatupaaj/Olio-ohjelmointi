@@ -43,18 +43,26 @@
             </StackPanel>
             <StackPanel Background="#FF5DD9E6" x:Name="spRight">
                 <StackPanel>
-                    <TextBlock x:Name="textBlock3_Copy" Margin="5" TextWrapping="Wrap" Text="Binding to collection:" Width="147" FontSize="14" Height="25"/>
-                    <Button x:Name="button" Content="Bindaa oliokokoelmaan" Height="31" Width="142" Margin="5" Click="button_Click"/>
-                    <TextBlock x:Name="textBlock1_Copy2" Height="25" Margin="5" TextWrapping="Wrap" Text="JYP Jyväskylää" Width="141" FontSize="14"/>
-                    <TextBox x:Name="textBoxName" Height="31" Margin="5" TextWrapping="Wrap" Text="{Binding Path=Name}" Width="142" FontSize="14"/>
-                    <TextBox x:Name="textBoxCity" Height="31" Margin="5" TextWrapping="Wrap" Text="{Binding Path=City}" Width="142" FontSize="14"/>
-                
+                    <TextBlock x:Name="textBlock3_Copy" TextWrapping="Wrap" Text="Binding to collection:" Width="147" FontSize="14" Height="25"/>
+                    <Button x:Name="button" Content="Bindaa oliokokoelmaan" Height="31" Width="142" Click="button_Click"/>
+                    <TextBlock x:Name="textBlock1_Copy2" Height="25" TextWrapping="Wrap" Text="JYP Jyväskylää" Width="141" FontSize="14"/>
+                    <TextBox x:Name="textBoxName" Height="31" TextWrapping="Wrap" Text="{Binding Path=Name}" Width="142" FontSize="14"/>
+                    <TextBox x:Name="textBoxCity" Height="31" TextWrapping="Wrap" Text="{Binding Path=City}" Width="142" FontSize="14"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="button1" Content="Back" Height="39" Width="68" Margin="5"/>
-                    <Button x:Name="button2" Content="Forward" Height="39" Width="67" Margin="5"/>
+                    <Button x:Name="button1" Content="Back" Height="39" Width="68" Margin="5" Click="button1_Click"/>
+                    <Button x:Name="button2" Content="Forward" Height="39" Width="67" Margin="5" Click="button2_Click"/>
                 </StackPanel>
-                <Button x:Name="button3" Content="Create new" Height="39" Width="67" Margin="5"/>
+                <TextBlock Text="Uuden joukkuen lisäys:" Height="27"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textBlock4" Height="25" TextWrapping="Wrap" Text="Nimi:" Width="73"/>
+                    <TextBox x:Name="name" Width="77" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="textBlock5" Height="25" TextWrapping="Wrap" Text="Kaupunki:" Width="73"/>
+                    <TextBox x:Name="city" Width="77" />
+                </StackPanel>
+                <Button x:Name="button3" Content="Create new" Height="39" Width="67" Margin="5" Click="button3_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

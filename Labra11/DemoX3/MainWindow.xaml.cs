@@ -54,5 +54,41 @@ namespace DemoX3
             //demo2: kytketään olio-kokoelman 1. olioon
             spRight.DataContext = joukkueet[counter];
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            if (counter == joukkueet.Count-1)
+            {
+                counter = 0;
+                spRight.DataContext = joukkueet[counter];
+            }
+            else
+            {
+                counter++;
+                spRight.DataContext = joukkueet[counter];
+            }
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            if (counter == 0)
+            {
+                counter = joukkueet.Count-1;
+                spRight.DataContext = joukkueet[counter];
+            }
+            else
+            {
+                counter--;
+                spRight.DataContext = joukkueet[counter];
+            }
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            HockeyTeam t = new HockeyTeam();
+            t.Name = name.Text;
+            t.City = city.Text;
+            joukkueet.Add(t);
+        }
     }
 }
