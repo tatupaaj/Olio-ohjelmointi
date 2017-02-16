@@ -6,16 +6,32 @@
         xmlns:local="clr-namespace:t3"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid Background="#FFC3F9F2">
         <StackPanel Orientation="Horizontal">
-            <StackPanel>
-                <ListBox x:Name="listBox" Height="309" Margin="5" VerticalAlignment="Top" Width="190"/>
+            <StackPanel Margin="5">
+                <ListBox x:Name="listBox" Height="309"  VerticalAlignment="Top" Width="190"/>
             </StackPanel>
-            <StackPanel Width="167">
-                <TextBlock Text="Työntekijän tiedot:"/>
+            <StackPanel Width="167" Margin="5">
+                <TextBlock Text="Työntekijän tiedot:" FontSize="16"/>
+                <TextBlock Text="Etunimi:" FontSize="14"/>
+                <TextBox x:Name="etunimi"/>
+                <TextBlock Text="Sukunimi:" FontSize="14"/>
+                <TextBox x:Name="sukunimi"/>
+                <TextBlock Text="Työntekijänumero:" FontSize="14"/>
+                <TextBox x:Name="numero"/>
+                <TextBlock Text="Titteli:" FontSize="14"/>
+                <TextBox x:Name="titteli"/>
+                <TextBlock Text="Palkka:" FontSize="14"/>
+                <TextBox x:Name="palkka"/>
+                <TextBlock Text="Työsuhde:" Margin="0,10,0,10" FontSize="14"/>
+                <RadioButton x:Name="vakituinen" Content="Valituinen" />
+                <RadioButton x:Name="osaAikainen" Content="Osa aikainen"/>
             </StackPanel>
-            <StackPanel Width="100">
-
+            <StackPanel Width="130" Margin="5">
+                <TextBlock Text="Palkanlaskenta:" Margin="5,0,0,0" FontSize="16"/>
+                <Button x:Name="hae" Content="Hae työntekijät" Height="27" Margin="5" Background="#FFC4C2F5"/>
+                <Button x:Name="tyhjenna" Content="Tyhjennä" Height="27" Margin="5" Background="#FFC4C2F5"/>
+                <Button x:Name="ylikirjita" Content="Ylikirjoita työntekijä" Height="27" Margin="5" Background="#FFC4C2F5"/>
             </StackPanel>
         </StackPanel>
     </Grid>
