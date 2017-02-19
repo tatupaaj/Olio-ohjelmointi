@@ -9,7 +9,7 @@
     <Grid Background="#FFC3F9F2">
         <StackPanel Orientation="Horizontal">
             <StackPanel Margin="5">
-                <ListBox x:Name="listBox" Height="309"  VerticalAlignment="Top" Width="190"/>
+                <ListBox x:Name="listBox" Height="309"  VerticalAlignment="Top" Width="190" SelectionChanged="list_Selected" SelectionMode="Single"/>
             </StackPanel>
             <StackPanel Width="167" Margin="5">
                 <TextBlock Text="Työntekijän tiedot:" FontSize="16"/>
@@ -29,9 +29,9 @@
             </StackPanel>
             <StackPanel Width="130" Margin="5">
                 <TextBlock Text="Palkanlaskenta:" Margin="5,0,0,0" FontSize="16"/>
-                <Button x:Name="hae" Content="Hae työntekijät" Height="27" Margin="5" Background="#FFC4C2F5"/>
-                <Button x:Name="tyhjenna" Content="Tyhjennä" Height="27" Margin="5" Background="#FFC4C2F5"/>
-                <Button x:Name="ylikirjita" Content="Ylikirjoita työntekijä" Height="27" Margin="5" Background="#FFC4C2F5"/>
+                <Button x:Name="hae" Content="Hae työntekijät" Height="27" Margin="5" Background="#FFC4C2F5" Click="hae_Click"/>
+                <Button x:Name="tyhjenna" Content="Tyhjennä" Height="27" Margin="5" Background="#FFC4C2F5" Click="tyhjenna_Click"/>
+                <Button x:Name="ylikirjoita" Content="Ylikirjoita työntekijä" Height="27" Margin="5" Background="#FFC4C2F5" Click="ylikirjita_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
