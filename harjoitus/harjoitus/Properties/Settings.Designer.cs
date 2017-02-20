@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Harjoitustyö.Properties
+namespace harjoitus.Properties
 {
 
 
