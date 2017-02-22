@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using harjoitusClass;
 
 namespace harjoitus
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for huone1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class huone1 : Window
     {
-        Esine table = new Esine { Numero = 1, Image = "pictures/1.png" };
-        public MainWindow()
+        public huone1()
         {
             InitializeComponent();
-        }
-
-        private void OnImageButtonClick(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
