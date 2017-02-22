@@ -24,7 +24,17 @@ namespace Demo2
         public MainWindow()
         {
             InitializeComponent();
-            svmo.LoadStudents();
+            //kovakoodatut
+            //svmo.LoadStudents();
+            //tietokannasta
+            try
+            {
+                svmo.LoadStudentsFromMysql();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)

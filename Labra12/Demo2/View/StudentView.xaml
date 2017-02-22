@@ -17,7 +17,7 @@
                                 <TextBlock Text="{Binding FullName, Mode=OneWay}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Text="{Binding AsioId, Mode=TwoWay}" Width="45" Background="Yellow" Margin="5"/>
+                                <TextBox Text="{Binding AsioId, Mode=TwoWay}" Width="45" Background="#FFF1A83D" Margin="5"/>
                                 <TextBox Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Margin="5"/>
                                 <TextBox Text="{Binding LastName, Mode=TwoWay}" Width="100" Margin="5"/>
                             </StackPanel>
