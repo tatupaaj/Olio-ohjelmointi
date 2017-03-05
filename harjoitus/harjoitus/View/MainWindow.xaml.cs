@@ -12,24 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using harjoitusClass;
 
-namespace harjoitus
+namespace harjoitus.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindowView : Window
     {
-        Esine table = new Esine { Numero = 1, Image = "pictures/1.png" };
-        public MainWindow()
+        public MainWindowView()
         {
             InitializeComponent();
         }
 
-        private void OnImageButtonClick(object sender, RoutedEventArgs e)
+        /*private void OnImageButtonClick(object sender, RoutedEventArgs e)
         {
             
-        }
+        }*/
     }
 }

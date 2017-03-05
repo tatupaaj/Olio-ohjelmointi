@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace harjoitus
+namespace harjoitus2.View
 {
     /// <summary>
-    /// Interaction logic for huone1.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class huone1 : Window
+    public partial class MainWindowView : Window
     {
-        public huone1()
+        public MainWindowView()
         {
             InitializeComponent();
         }

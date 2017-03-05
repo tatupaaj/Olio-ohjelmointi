@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace harjoitusClass
+namespace harjoitus.Model
 {
     public class Huone
     {
-        public int HuoneNumero { get; set; }
-        public List<Esine> Esineet { get; set; }
-        public int AvaidenMaara { get; set; }
+        public string Name { get; set; }
+        //public int HuoneNumero { get; set; }
+        //public List<Esine> Esineet { get; set; }
+        //public int AvaidenMaara { get; set; }
     }
 
     public class Esine
     {
-        public int Numero { get; set; }
+        public string Name { get; set; }
         public string Image { get; set; }
     }
 
@@ -26,4 +27,3 @@ namespace harjoitusClass
     }
 }
 
-///https://metanit.com/sharp/wpf/11.php
