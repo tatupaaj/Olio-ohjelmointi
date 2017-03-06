@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace harjoitus.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for huone1.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class huone1 : Window
     {
-        public MainWindowView()
+        public huone1()
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        /* private void OnImageButtonClick(object sender, RoutedEventArgs e)
-         {
-
-         }*/
-
     }
 }
