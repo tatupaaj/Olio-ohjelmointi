@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using harjoitus;
+using System.Collections.ObjectModel;
 using harjoitusClass;
 
 namespace harjoitus
@@ -21,7 +23,7 @@ namespace harjoitus
     /// </summary>
     public partial class MainWindow : Window
     {
-        Esine table = new Esine { Numero = 1, Image = "pictures/1.png" };
+        Esine table = new Esine { Numero = 1, Image ="pictures/1.png" };
         public MainWindow()
         {
             InitializeComponent();

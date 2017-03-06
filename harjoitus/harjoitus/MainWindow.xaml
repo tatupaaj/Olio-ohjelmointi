@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBox Text="{Binding Path = Numero}" Margin="57,47,328.4,219.8"/>
+        <TextBox Text="{Binding table}" Margin="57,47,328.4,219.8"/>
         <Button Name="AButton" Click="OnImageButtonClick" Margin="234,145,43.4,9.8" Background="{x:Null}" BorderBrush="{x:Null}">
             <Image Source="{Binding Image}" Width="232" Height="87"></Image>
         </Button>

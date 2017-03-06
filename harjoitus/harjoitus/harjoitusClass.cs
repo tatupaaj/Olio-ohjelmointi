@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,6 @@ namespace harjoitusClass
     public class Huone
     {
         public int HuoneNumero { get; set; }
-        public List<Esine> Esineet { get; set; }
         public int AvaidenMaara { get; set; }
     }
 
