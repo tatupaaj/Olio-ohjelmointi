@@ -16,8 +16,16 @@ namespace harjoitus.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            huone1 = new Huone { Name = "Room 1" };
+            opettajanhuone = new Huone { Name = "Room 1" };
+            esine1 = new Esine("table","pictures/table.png");
+            //huone1.Esineet.Add(esine1);
+            
         }
-        public Huone huone1 { get; set; }
+        public Huone opettajanhuone { get; set; }
+        public Huone luokka { get; set; }
+        public Huone ruokailu { get; set; }
+        public Huone baari { get; set; }
+        public Huone koti { get; set; }
+        public Esine esine1 { get; set; }
     }
 }

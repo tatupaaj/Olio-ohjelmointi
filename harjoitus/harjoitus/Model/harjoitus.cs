@@ -10,14 +10,19 @@ namespace harjoitus.Model
     {
         public string Name { get; set; }
         //public int HuoneNumero { get; set; }
-        //public List<Esine> Esineet { get; set; }
-        //public int AvaidenMaara { get; set; }
+        public List<Esine> Esineet { get; set; }
+        public int AvaidenMaara { get; set; }
     }
 
     public class Esine
     {
         public string Name { get; set; }
         public string Image { get; set; }
+        public Esine(string name, string image)
+        {
+            Name = name;
+            Image = image;
+        }
     }
 
     public class Avain

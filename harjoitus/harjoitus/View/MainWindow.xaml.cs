@@ -25,9 +25,10 @@ namespace harjoitus.View
             InitializeComponent();
         }
 
-        /*private void OnImageButtonClick(object sender, RoutedEventArgs e)
+        private void OnImageButtonClick(object sender, RoutedEventArgs e)
         {
-            
-        }*/
+
+        }
+
     }
 }
