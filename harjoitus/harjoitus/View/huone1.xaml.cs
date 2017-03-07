@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using harjoitus.ViewModel;
+using harjoitus.Model;
 
 namespace harjoitus.View
 {
@@ -19,6 +21,7 @@ namespace harjoitus.View
     /// </summary>
     public partial class huone1 : Window
     {
+        //harjoitus.ViewModel.MainViewModel svmo = new harjoitus.ViewModel.MainViewModel();
         public huone1()
         {
             InitializeComponent();

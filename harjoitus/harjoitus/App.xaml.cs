@@ -21,7 +21,6 @@ namespace harjoitus
             {
                 DataContext = new MainViewModel()
             };
-
             mw.Show();
         }
     }

@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBox Height="49" Text="{Binding Path = Huone1.Numero, Mode=OneWay }" Width="160" Margin="48,23,310.4,248.8"/>
-        <TextBox Height="49" Text="{Binding Path = esine1.name, Mode=OneWay }" Width="160" Margin="48,23,310.4,248.8"/>
+        <TextBox Height="49" Text="{Binding Path = opettajanhuone.Numero, Mode=OneWay }" Width="160" Margin="48,23,310.4,248.8"/>
+        <TextBox Height="49" Text="{Binding Path = esine1.Name, Mode=OneWay }" Width="160" Margin="48,23,310.4,248.8"/>
+        <Image Source="{Binding esine1.Image, Mode=OneWay}" Width="232" Height="127" Margin="10,160,275,32"></Image>
     </Grid>
 </Window>

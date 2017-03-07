@@ -23,11 +23,14 @@ namespace harjoitus.View
         public MainWindowView()
         {
             InitializeComponent();
+            
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            huone1 h = new harjoitus.View.huone1();
+            this.Close();
+            h.ShowDialog();
         }
 
         /* private void OnImageButtonClick(object sender, RoutedEventArgs e)
