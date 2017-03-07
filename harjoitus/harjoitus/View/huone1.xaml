@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:harjoitus.View"
         mc:Ignorable="d"
-        Title="huone1" Height="300" Width="500">
+        Title="huone1" Height="500" Width="700">
     <Grid>
         <TextBox Height="43" Text="{Binding Path=opettajanhuone.Name, Mode=OneWay}" Width="197" Margin="10,27,310,249"/>
         <TextBox Height="43" Text="{Binding Path=esine1.Name, Mode=OneWay}" Width="197" Margin="10,75,310,201"/>

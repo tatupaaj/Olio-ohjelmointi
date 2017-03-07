@@ -25,6 +25,7 @@ namespace harjoitus.View
         public huone1()
         {
             InitializeComponent();
+            this.DataContext = new MainViewModel();
         }
     }
 }
