@@ -6,9 +6,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="50" Margin="290,46,0,0" VerticalAlignment="Top" Width="134" Click="button_Click"/>
-        <!-- <Button Name="AButton" Click="OnImageButtonClick" Margin="234,145,43.4,9.8" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Source="{Binding esine1.Image, Mode=OneWay}" Width="232" Height="127"></Image>
-        </Button> -->
+      <Canvas>
+            <Button x:Name="button" Canvas.Left="10" Canvas.Top="10" Content="Button" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="134" Click="button_Click"/>
+            <Button Name="aButton" Click="OnImageButtonClick" Canvas.Left="150" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand">
+            <Image Source="{Binding esine1.Image, Mode=OneWay}" Width="232" Height="128"></Image>
+        </Button>
+      </Canvas>
     </Grid>
 </Window>

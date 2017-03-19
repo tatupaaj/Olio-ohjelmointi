@@ -9,6 +9,12 @@ namespace harjoitus.Model
     public class Huone
     {
         public string Name { get; set; }
+        public string Image { get; set; }
+        public Huone(string name, string image)
+        {
+            Name = name;
+            Image = image;
+        }
         //public int HuoneNumero { get; set; }
         public List<Esine> Esineet { get; set; }
         public int AvaidenMaara { get; set; }
@@ -22,6 +28,10 @@ namespace harjoitus.Model
         {
             Name = name;
             Image = image;
+        }
+        public void Move()
+        {
+           
         }
     }
 

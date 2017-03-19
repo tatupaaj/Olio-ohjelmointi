@@ -27,5 +27,10 @@ namespace harjoitus.View
             InitializeComponent();
             this.DataContext = new MainViewModel();
         }
+
+        private void OnImageButtonClick(object sender, RoutedEventArgs e)
+        {
+            aButton.Visibility = Visibility.Hidden;
+        }
     }
 }
