@@ -1,0 +1,17 @@
+﻿<Window x:Class="Labra14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labra14"
+        mc:Ignorable="d"
+        Title="Simple Thread Demo" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <Button x:Name="btnWork" Content="Do Long Work" FontSize="16" Margin="208,0,189,0" Click="btnWork_Click"/>
+            <Button x:Name="btnFire" Content="Fire!" FontSize="16" Margin="208,0,189,0" Click="btnFire_Click"/>
+            <TextBox x:Name="txtMessage" Text="[messages come here]" Width="auto" FontSize="16"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
