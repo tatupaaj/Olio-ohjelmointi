@@ -17,7 +17,7 @@
                 <Image Source="pack://application:,,,/Resources/1.png" Width="997" Height="521" Canvas.Top="3"/>
                 <Image Source="pack://application:,,,/Resources/table.png" Width="266" Height="189" Canvas.Top="305" Canvas.Left="482"/>
                 <Button Name="aButton" Click="OnImageButtonClick" Canvas.Left="556" Canvas.Top="310" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="76">
-                    <Image Source="pack://application:,,,/Resources/key.png" Width="68" Height="41"></Image>
+                    <Image Source="pack://application:,,,/Resources/key.png" Visibility="{Binding Path=IsVisible}" Width="68" Height="41"></Image>
                 </Button>
             </Canvas>
         </StackPanel>

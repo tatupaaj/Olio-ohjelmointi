@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace harjoitus.Model
 {
@@ -24,14 +26,17 @@ namespace harjoitus.Model
     {
         public string Name { get; set; }
         public string Image { get; set; }
-        public Esine(string name, string image)
+        public bool IsVisible { get; set; }
+        public Esine(string name, string image, bool isvisible)
         {
             Name = name;
             Image = image;
+            IsVisible = IsVisible;
         }
-        public void Move()
+        public void Move(Button mybutton)
         {
-           
+            //Button button = (Button)mybutton;
+            mybutton.Visibility  = Visibility.Hidden;
         }
     }
 

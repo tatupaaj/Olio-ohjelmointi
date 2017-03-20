@@ -21,6 +21,7 @@ namespace harjoitus.View
     /// </summary>
     public partial class huone1 : Window
     {
+        Esine esine1 = new Esine("table", "pack://application:,,,/Resources/table.png", false);
         //harjoitus.ViewModel.MainViewModel svmo = new harjoitus.ViewModel.MainViewModel();
         public huone1()
         {
@@ -30,7 +31,7 @@ namespace harjoitus.View
 
         private void OnImageButtonClick(object sender, RoutedEventArgs e)
         {
-            aButton.Visibility = Visibility.Hidden;
+            esine1.Move(aButton);
         }
     }
 }
