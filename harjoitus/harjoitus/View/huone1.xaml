@@ -5,10 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:harjoitus.View"
         mc:Ignorable="d"
-        Title="huone1" Height="300" Width="500">
+        Title="huone1" Height="600" Width="1000">
     <Grid>
-        <TextBox Height="43" Text="{Binding Path=opettajanhuone.Name, Mode=OneWay}" Width="197" Margin="10,27,310,249"/>
-        <TextBox Height="43" Text="{Binding Path=esine1.Name, Mode=OneWay}" Width="197" Margin="10,75,310,201"/>
-        <Image Source="{Binding esine1.Image, Mode=OneWay}" Width="232" Height="127" Margin="10,160,275,32"></Image>
+        <StackPanel>
+            <StackPanel Background="#FFF7CC6D" Orientation="Horizontal">
+                <Button x:Name="menuButton" Content="Menu" HorizontalAlignment="Left" Height="51" Width="144"/>
+                <Label x:Name="lbl" Width="754"></Label>
+                <Button x:Name="helpButton" Content="?" Width="97"/>
+            </StackPanel>
+            <Canvas>
+                <Image Source="pack://application:,,,/Resources/1.png" Width="997" Height="521" Canvas.Top="3"/>
+                <Image Source="pack://application:,,,/Resources/table.png" Width="266" Height="189" Canvas.Top="305" Canvas.Left="482"/>
+                <Button Name="aButton" Click="OnImageButtonClick" Canvas.Left="556" Canvas.Top="310" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="76">
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="68" Height="41"></Image>
+                </Button>
+            </Canvas>
+        </StackPanel>
     </Grid>
 </Window>

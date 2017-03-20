@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using harjoitus.ViewModel;
 
 namespace harjoitus.View
 {
@@ -23,7 +24,7 @@ namespace harjoitus.View
         public MainWindowView()
         {
             InitializeComponent();
-            
+            this.DataContext = new MainViewModel();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -33,10 +34,10 @@ namespace harjoitus.View
             h.ShowDialog();
         }
 
-        /* private void OnImageButtonClick(object sender, RoutedEventArgs e)
-         {
-
-         }*/
+        private void OnImageButtonClick(object sender, RoutedEventArgs e)
+        {
+            Canvas.SetLeft(aButton, Canvas.GetLeft(aButton) + 100);
+        }
 
     }
 }
