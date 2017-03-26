@@ -12,13 +12,12 @@ namespace harjoitus.Model
     {
         public string Name { get; set; }
         public string Image { get; set; }
-        public Huone(string name, string image)
+        public List<Avain> Avaimet { get; set; }
+        public Huone()
         {
-            Name = name;
-            Image = image;
+            Avaimet = new List<Avain>();
         }
         //public int HuoneNumero { get; set; }
-        public List<Esine> Esineet { get; set; }
         public int AvaidenMaara { get; set; }
     }
 
@@ -26,24 +25,27 @@ namespace harjoitus.Model
     {
         public string Name { get; set; }
         public string Image { get; set; }
-        public bool IsVisible { get; set; }
-        public Esine(string name, string image, bool isvisible)
+        /*public Esine(string name, string image)
         {
             Name = name;
             Image = image;
-            IsVisible = IsVisible;
-        }
-        public void Move(Button mybutton)
-        {
-            //Button button = (Button)mybutton;
-            mybutton.Visibility  = Visibility.Hidden;
-        }
+        }*/
+        
     }
 
     public class Avain
     {
-        public int AvainNumero { get; set; }
-        public bool OnkoLöyty { get; set; }
+        public int KeyNumber { get; set; }
+        public bool IsFound { get; set; }
+        public Avain(int keynumber, bool isfound)
+        {
+            KeyNumber = keynumber;
+            IsFound = isfound;
+        }
+        public void Disappearing(Button myButton)
+        {
+            myButton.Visibility = Visibility.Hidden;
+        }
     }
 }
 

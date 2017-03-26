@@ -8,17 +8,46 @@
         Title="huone1" Height="600" Width="1000">
     <Grid>
         <StackPanel>
-            <StackPanel Background="#FFF7CC6D" Orientation="Horizontal">
+            <StackPanel Background="#FFF6F6F6" Orientation="Horizontal">
                 <Button x:Name="menuButton" Content="Menu" HorizontalAlignment="Left" Height="51" Width="144"/>
-                <Label x:Name="lbl" Width="754"></Label>
+                <TextBlock x:Name="message" Width="627" />
+                <Canvas Width="128">
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Name="menuKey1" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                    <Image Name="menuKey2" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                    <Image Name="menuKey3" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                </Canvas>
                 <Button x:Name="helpButton" Content="?" Width="97"/>
             </StackPanel>
             <Canvas>
                 <Image Source="pack://application:,,,/Resources/1.png" Width="997" Height="521" Canvas.Top="3"/>
-                <Image Source="pack://application:,,,/Resources/table.png" Width="266" Height="189" Canvas.Top="305" Canvas.Left="482"/>
-                <Button Name="aButton" Click="OnImageButtonClick" Canvas.Left="556" Canvas.Top="310" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="76">
-                    <Image Source="pack://application:,,,/Resources/key.png" Visibility="{Binding Path=IsVisible}" Width="68" Height="41"></Image>
+                <Image Source="pack://application:,,,/Resources/table.png" Width="266" Height="189" Canvas.Top="305" Canvas.Left="550"/>
+                <Button Name="key1" Click="OnButton1Click" Canvas.Left="630" Canvas.Top="310" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="61" Height="36">
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="51" Height="36"></Image>
                 </Button>
+                <Button Name="key2" Click="OnButton2Click" Canvas.Left="170" Canvas.Top="244" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="56" RenderTransformOrigin="0.5,0.5" Height="36">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-35.432"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="46" Height="36"></Image>
+                </Button>
+                <Button Name="key3" Click="OnButton3Click" Canvas.Left="756" Canvas.Top="235" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="49" Height="30">
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="49" Height="31"></Image>
+                </Button>
+                <Button Name="door2" Click="OnDoor2Click" Canvas.Left="320" Canvas.Top="99" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Visibility="Hidden">
+                    <Image Source="pack://application:,,,/Resources/doorinside.png" Height="280"></Image>
+                </Button>
+                <Button Name="door1" Click="OnDoor1Click" Canvas.Left="400" Canvas.Top="108" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" >
+                    <Image Source="pack://application:,,,/Resources/door.png" Height="259" Width="158"></Image>
+                </Button>
+                <Button Name="closetdoor1" Click="OnDoor1Click" Canvas.Left="200" Canvas.Top="85" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="257" />
             </Canvas>
         </StackPanel>
     </Grid>

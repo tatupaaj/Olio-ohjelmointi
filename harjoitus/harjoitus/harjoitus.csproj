@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\huone2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +75,9 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\huone1.xaml.cs">
       <DependentUpon>huone1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone2.xaml.cs">
+      <DependentUpon>huone2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -105,9 +112,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\table.png" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +119,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\doorinside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyNotFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyFound.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
