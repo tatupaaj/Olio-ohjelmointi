@@ -10,32 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace harjoitus.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UusiPeli.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UusiPeli : Window
     {
-        public MainWindow()
+        public UusiPeli()
         {
             InitializeComponent();
         }
 
-        private void btnNewGame_Click(object sender, RoutedEventArgs e)
+        private void btnNew_Click(object sender, RoutedEventArgs e)
         {
-            UusiPeli game = new harjoitus.View.UusiPeli();
+            huone1 h = new harjoitus.View.huone1();
             this.Close();
-            game.ShowDialog();
-
+            h.ShowDialog();
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
+        private void btnLoadGame_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow no = new harjoitus.View.MainWindow();
             this.Close();
+            no.ShowDialog();
         }
     }
 }

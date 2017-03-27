@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:harjoitus.View"
         mc:Ignorable="d"
-        Title="huone2" Height="300" Width="300">
+        Title="huone2" Height="600" Width="1000">
     <Grid>
-        
+        <StackPanel>
+            <StackPanel Background="#FFF6F6F6" Orientation="Horizontal">
+                <Button x:Name="menuButton" Content="Menu" HorizontalAlignment="Left" Height="51" Width="144"/>
+                <TextBlock x:Name="message" Width="627" />
+                <Canvas Width="128">
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47"/>
+                    <Image Name="menuKey1" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                    <Image Name="menuKey2" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                    <Image Name="menuKey3" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
+                </Canvas>
+                <Button x:Name="helpButton" Content="?" Width="97"/>
+            </StackPanel>
+            
+        </StackPanel>
     </Grid>
 </Window>
