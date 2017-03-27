@@ -25,6 +25,7 @@ namespace harjoitus.View
         Avain avain1 = new Avain(1, false);
         Avain avain2 = new Avain(2, false);
         Avain avain3 = new Avain(3, false);
+        Esine esine = new Esine();
         public int numero = 0;
         public huone1()
         {
@@ -106,6 +107,11 @@ namespace harjoitus.View
                 default:
                     break;
             }
+        }
+
+        private void OnNewspaper(object sender, RoutedEventArgs e)
+        {
+            esine.MoveRight(newspaper, 100);
         }
     }
 }

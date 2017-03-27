@@ -9,7 +9,7 @@
       <Canvas>
             <Button x:Name="button" Canvas.Left="10" Canvas.Top="10" Content="Button" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="134" Click="button_Click"/>
             <Button Name="aButton" Click="OnImageButtonClick" Canvas.Left="150" Canvas.Top="10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand">
-            <Image Source="{Binding esine1.Image, Mode=OneWay}" Width="232" Height="128"></Image>
+                <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Width="232" Height="128"></Image>
         </Button>
       </Canvas>
     </Grid>

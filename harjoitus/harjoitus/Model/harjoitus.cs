@@ -10,26 +10,38 @@ namespace harjoitus.Model
 {
     public class Huone
     {
-        public string Name { get; set; }
+        public int HuoneNumero { get; set; }
         public string Image { get; set; }
         public List<Avain> Avaimet { get; set; }
         public Huone()
         {
             Avaimet = new List<Avain>();
         }
-        //public int HuoneNumero { get; set; }
-        public int AvaidenMaara { get; set; }
     }
 
     public class Esine
     {
         public string Name { get; set; }
         public string Image { get; set; }
+        public bool IsMoved { get; set; }
         /*public Esine(string name, string image)
         {
             Name = name;
             Image = image;
         }*/
+        public void MoveRight(Button myButton, int x)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + x);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - x);
+                IsMoved = false;
+            }
+        }
         
     }
 

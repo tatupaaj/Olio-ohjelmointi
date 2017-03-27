@@ -47,7 +47,9 @@
                 <Button Name="door1" Click="OnDoor1Click" Canvas.Left="400" Canvas.Top="108" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" >
                     <Image Source="pack://application:,,,/Resources/door.png" Height="259" Width="158"></Image>
                 </Button>
-                <Button Name="closetdoor1" Click="OnDoor1Click" Canvas.Left="200" Canvas.Top="85" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="257" />
+                <Button Name="newspaper" Click="OnNewspaper" Canvas.Left="580" Canvas.Top="288" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" >
+                    <Image Source="pack://application:,,,/Resources/newspaper.png" Height="81" Width="161"></Image>
+                </Button>
             </Canvas>
         </StackPanel>
     </Grid>
