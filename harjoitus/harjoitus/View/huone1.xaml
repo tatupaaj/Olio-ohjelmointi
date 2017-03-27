@@ -8,9 +8,16 @@
         Title="huone1" Height="600" Width="1000">
     <Grid>
         <StackPanel>
-            <StackPanel Background="#FFF6F6F6" Orientation="Horizontal">
-                <Button x:Name="menuButton" Content="Menu" HorizontalAlignment="Left" Height="51" Width="144"/>
-                <TextBlock x:Name="message" Width="627" />
+            <StackPanel Background="#FFB99678" Orientation="Horizontal">
+                <Button x:Name="menuButton" Content="Menu" HorizontalAlignment="Left" Height="51" Width="144" FontSize="26" FontWeight="Bold">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FFEED7C4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <TextBlock x:Name="message" Width="627"/>
                 <Canvas Width="128">
                     <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47"/>
                     <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47"/>
@@ -19,7 +26,14 @@
                     <Image Name="menuKey2" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
                     <Image Name="menuKey3" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
                 </Canvas>
-                <Button x:Name="helpButton" Content="?" Width="97"/>
+                <Button x:Name="helpButton" Content="?" FontSize="26" FontWeight="Bold" Width="87">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="0"/>
+                            <GradientStop Color="#FFEED7C4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
             </StackPanel>
             <Canvas>
                 <Image Source="pack://application:,,,/Resources/1.png" Width="997" Height="521" Canvas.Top="3"/>
