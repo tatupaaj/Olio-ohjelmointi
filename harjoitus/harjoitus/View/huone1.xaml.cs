@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using harjoitus.ViewModel;
 using harjoitus.Model;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 namespace harjoitus.View
 {
@@ -21,12 +25,13 @@ namespace harjoitus.View
     /// </summary>
     public partial class huone1 : Window
     {
-        Huone huone = new Huone();
-        Avain avain1 = new Avain(1, false);
-        Avain avain2 = new Avain(2, false);
-        Avain avain3 = new Avain(3, false);
+        Huone h1 = new Huone();
+        Avain avain1 = new Avain { KeyNumber = 1, IsFound = false };
+        Avain avain2 = new Avain { KeyNumber = 2, IsFound = false };
+        Avain avain3 = new Avain { KeyNumber = 3, IsFound = false };
         Esine esine = new Esine();
         public int numero = 0;
+
         public huone1()
         {
             InitializeComponent();
@@ -36,37 +41,38 @@ namespace harjoitus.View
         // adding to list keys
         private void IniMyStuff()
         {
-            huone.Avaimet.Add(avain1);
-            huone.Avaimet.Add(avain2);
-            huone.Avaimet.Add(avain3);
+            h1.HuoneNumero = 1;
+            h1.Avaimet.Add(avain1);
+            h1.Avaimet.Add(avain2);
+            h1.Avaimet.Add(avain3);
         }
-        // Key's work
+
+        #region Key's work
         private void OnButton1Click(object sender, RoutedEventArgs e)
         {
-            avain1.Disappearing(key1);
-            avain1.IsFound = true;
+            avain1.Disappearing(key1, avain1);
             numero++;
             MenuAvaimet();
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
-            avain2.Disappearing(key2);
-            avain2.IsFound = true;
+            avain2.Disappearing(key2, avain2);
+
             numero++;
             MenuAvaimet();
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
-            avain3.Disappearing(key3);
-            avain3.IsFound = true;
+            avain3.Disappearing(key3, avain3);
             numero++;
             MenuAvaimet();
         }
+        #endregion
 
-        // door's work
+        #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            foreach (var a in huone.Avaimet)
+            foreach (var a in h1.Avaimet)
             {
                 if (a.IsFound == false)
                 {
@@ -89,7 +95,14 @@ namespace harjoitus.View
             h.ShowDialog();
 
         }
+        #endregion
 
+        #region furniture's work
+        private void OnNewspaper(object sender, RoutedEventArgs e)
+        {
+            esine.MoveRight(newspaper, 100);
+        }
+        #endregion
         // Menu key's work
         private void MenuAvaimet()
         {
@@ -108,10 +121,23 @@ namespace harjoitus.View
                     break;
             }
         }
-
-        private void OnNewspaper(object sender, RoutedEventArgs e)
+        
+        private void menuButton_Click(object sender, RoutedEventArgs e)
         {
-            esine.MoveRight(newspaper, 100);
+            System.IO.StreamWriter outputFile = new System.IO.StreamWriter("huone.txt");
+            outputFile.WriteLine(h1.HuoneNumero);
+            outputFile.Close();
+            Stream writeStream = new FileStream("Avaimet.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Avain>));
+            //IFormatter formatter = new BinaryFormatter();
+            serializer.Serialize(writeStream, h1.Avaimet);
+            //formatter.Serialize(writeStream, avain1);
+            //formatter.Serialize(writeStream, avain2);
+            //formatter.Serialize(writeStream, avain3);
+            writeStream.Close();
+            MainWindow huone = new harjoitus.View.MainWindow();
+            this.Close();
+            huone.ShowDialog();
         }
     }
 }

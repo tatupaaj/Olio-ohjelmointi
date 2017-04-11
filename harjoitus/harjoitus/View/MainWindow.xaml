@@ -23,7 +23,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnLoadGame" Content="Load Game" FontSize="20" Margin="50,20,50,10" >
+            <Button x:Name="btnLoadGame" Content="Load Game" FontSize="20" Margin="50,20,50,10" Click="btnLoadGame_Click" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
