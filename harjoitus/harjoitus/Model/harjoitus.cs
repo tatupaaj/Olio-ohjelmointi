@@ -36,7 +36,45 @@ namespace harjoitus.Model
                 IsMoved = false;
             }
         }
-        
+        public void MoveLeft(Button myButton, int x)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - x);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + x);
+                IsMoved = false;
+            }
+        }
+        public void MoveUp(Button myButton, int x)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                IsMoved = false;
+            }
+        }
+        public void MoveDown(Button myButton, int x)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                IsMoved = false;
+            }
+        }
     }
 
     public class Avain

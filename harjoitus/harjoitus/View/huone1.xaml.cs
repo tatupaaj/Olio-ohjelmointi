@@ -121,8 +121,15 @@ namespace harjoitus.View
                     break;
             }
         }
-        
-        private void menuButton_Click(object sender, RoutedEventArgs e)
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow huone = new harjoitus.View.MainWindow();
+            this.Close();
+            huone.ShowDialog();
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             System.IO.StreamWriter outputFile = new System.IO.StreamWriter("huone.txt");
             outputFile.WriteLine(h1.HuoneNumero);
@@ -131,9 +138,6 @@ namespace harjoitus.View
             XmlSerializer serializer = new XmlSerializer(typeof(List<Avain>));
             //IFormatter formatter = new BinaryFormatter();
             serializer.Serialize(writeStream, h1.Avaimet);
-            //formatter.Serialize(writeStream, avain1);
-            //formatter.Serialize(writeStream, avain2);
-            //formatter.Serialize(writeStream, avain3);
             writeStream.Close();
             MainWindow huone = new harjoitus.View.MainWindow();
             this.Close();

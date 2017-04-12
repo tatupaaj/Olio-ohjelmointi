@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using harjoitus.ViewModel;
 using harjoitus.Model;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace harjoitus.View
 {
@@ -112,11 +113,23 @@ namespace harjoitus.View
             }
         }
         
-        private void menuButton_Click(object sender, RoutedEventArgs e)
+        private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             System.IO.StreamWriter outputFile = new System.IO.StreamWriter("huone.txt");
             outputFile.WriteLine(h2.HuoneNumero);
             outputFile.Close();
+            Stream writeStream = new FileStream("Avaimet.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Avain>));
+            //IFormatter formatter = new BinaryFormatter();
+            serializer.Serialize(writeStream, h2.Avaimet);
+            writeStream.Close();
+            MainWindow huone = new harjoitus.View.MainWindow();
+            this.Close();
+            huone.ShowDialog();
+        }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
             MainWindow huone = new harjoitus.View.MainWindow();
             this.Close();
             huone.ShowDialog();

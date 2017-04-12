@@ -17,9 +17,9 @@ namespace harjoitus.ViewModel
         public MainViewModel()
         {
             //opettajanhuone = new Huone("Huone 1", "pack://application:,,,/Resources/1.png");
-            //esine1 = new Esine("table", "pack://application:,,,/Resources/table.png");
-            //{Binding opettajanhuone.Image, Mode=OneWay}
-            //huone1.Esineet.Add(esine1);           
+            //newspaper = new Esine { Image = "pack://application:,,,/Resources/newspaper.png" };
+            //{Binding opettajanhuone.Image, Mode=OneWay}       
         }
+        //Esine newspaper { get; set; }
     }
 }
