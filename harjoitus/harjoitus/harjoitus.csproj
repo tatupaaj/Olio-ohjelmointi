@@ -58,8 +58,26 @@
     <Compile Include="View\huone11.xaml.cs">
       <DependentUpon>huone11.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\huone22.xaml.cs">
+      <DependentUpon>huone22.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\huone3.xaml.cs">
       <DependentUpon>huone3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone33.xaml.cs">
+      <DependentUpon>huone33.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone4.xaml.cs">
+      <DependentUpon>huone4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone44.xaml.cs">
+      <DependentUpon>huone44.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone5.xaml.cs">
+      <DependentUpon>huone5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone55.xaml.cs">
+      <DependentUpon>huone55.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UusiPeli.xaml.cs">
       <DependentUpon>UusiPeli.xaml</DependentUpon>
@@ -76,7 +94,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\huone22.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\huone3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone33.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone44.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone55.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +200,58 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3.png" />
+    <Resource Include="Resources\4.png" />
+    <Resource Include="Resources\5.png" />
+    <Resource Include="Resources\chair.png" />
+    <Resource Include="Resources\chair2.png" />
+    <Resource Include="Resources\tableRuokailu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chairBar.png" />
+    <Resource Include="Resources\chairBar2.png" />
+    <Resource Include="Resources\chairKoti.png" />
+    <Resource Include="Resources\laptop.png" />
+    <Resource Include="Resources\painting.png" />
+    <Resource Include="Resources\pillow.png" />
+    <Resource Include="Resources\tableBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\b1.png" />
+    <Resource Include="Resources\b2.png" />
+    <Resource Include="Resources\b3.png" />
+    <Resource Include="Resources\b4.png" />
+    <Resource Include="Resources\beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\plate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\banan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cactus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copybook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\book1.png" />
+    <Resource Include="Resources\book2.png" />
+    <Resource Include="Resources\book3.png" />
+    <Resource Include="Resources\book4.png" />
+    <Resource Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hint.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,31 +21,21 @@ using System.Xml.Serialization;
 namespace harjoitus.View
 {
     /// <summary>
-    /// Interaction logic for huone1.xaml
+    /// Interaction logic for huone5.xaml
     /// </summary>
-    public partial class huone11 : Window
+    public partial class huone55 : Window
     {
         Huone huone = new Huone();
         Avain avain1 = new Avain { KeyNumber = 1, IsFound = false };
         Avain avain2 = new Avain { KeyNumber = 2, IsFound = false };
         Avain avain3 = new Avain { KeyNumber = 3, IsFound = false };
-        Esine lehti = new Esine();
+        Esine tyyny1 = new Esine();
+        Esine tyyny2 = new Esine();
         Esine tuoli = new Esine();
-        Esine kirjat1 = new Esine();
-        Esine kirjat2 = new Esine();
-        Esine kirja1 = new Esine();
-        Esine kirja2 = new Esine();
-        Esine kirja3 = new Esine();
-        Esine kirja4 = new Esine();
-        Esine kirja5 = new Esine();
-        Esine kirja6 = new Esine();
-        Esine kirja7 = new Esine();
-        Esine kirja8 = new Esine();
-        Esine kirja9 = new Esine();
-        Esine kirja10 = new Esine();
+        Esine lappari = new Esine();
         public int numero = 0;
 
-        public huone11()
+        public huone55()
         {
             InitializeComponent();
             IniMyStuff();
@@ -202,7 +192,7 @@ namespace harjoitus.View
         private void OnDoor2Click(object sender, RoutedEventArgs e)
         {
 
-            huone2 h = new harjoitus.View.huone2();
+            huone1 h = new harjoitus.View.huone1();
             this.Close();
             h.ShowDialog();
 
@@ -210,61 +200,31 @@ namespace harjoitus.View
         #endregion
 
         #region furniture's work
-        private void OnNewspaperClick(object sender, RoutedEventArgs e)
+        private void OnPillow1Click(object sender, RoutedEventArgs e)
         {
-            lehti.MoveRight(newspaper, 70);
+            tyyny1.MoveDownLeft(pillow1, 50, 50);
+        }
+        private void OnPillow2Click(object sender, RoutedEventArgs e)
+        {
+            tyyny2.MoveDownLeft(pillow2, 50, 50);
         }
         private void OnChairClick(object sender, RoutedEventArgs e)
         {
-            tuoli.MoveLeft(chair, 100);
+            tuoli.MoveUp(chair, 50);
         }
-        private void OnBooks1Click(object sender, RoutedEventArgs e)
+        private void OnLaptopClick(object sender, RoutedEventArgs e)
         {
-            kirjat1.MoveDown(books1, 70);
+            lappari.MoveRight(laptop, 80);
         }
-        private void OnBooks2Click(object sender, RoutedEventArgs e)
+        private void OnPainting1Click(object sender, RoutedEventArgs e)
         {
-            kirjat2.MoveRight(books2, 50);
+            painting1.Visibility = Visibility.Hidden;
+            painting2.Visibility = Visibility.Visible;
         }
-        private void OnBook1Click(object sender, RoutedEventArgs e)
+        private void OnPainting2Click(object sender, RoutedEventArgs e)
         {
-            kirja1.MoveDown(book1, 50);
-        }
-        private void OnBook2Click(object sender, RoutedEventArgs e)
-        {
-            kirja2.MoveDown(book2, 50);
-        }
-        private void OnBook3Click(object sender, RoutedEventArgs e)
-        {
-            kirja3.MoveDown(book3, 50);
-        }
-        private void OnBook4Click(object sender, RoutedEventArgs e)
-        {
-            kirja4.MoveDown(book4, 50);
-        }
-        private void OnBook5Click(object sender, RoutedEventArgs e)
-        {
-            kirja5.MoveDown(book5, 50);
-        }
-        private void OnBook6Click(object sender, RoutedEventArgs e)
-        {
-            kirja6.MoveDown(book6, 50);
-        }
-        private void OnBook7Click(object sender, RoutedEventArgs e)
-        {
-            kirja7.MoveDown(book7, 50);
-        }
-        private void OnBook8Click(object sender, RoutedEventArgs e)
-        {
-            kirja8.MoveUp(book8, 50);
-        }
-        private void OnBook9Click(object sender, RoutedEventArgs e)
-        {
-            kirja9.MoveUp(book9, 50);
-        }
-        private void OnBook10Click(object sender, RoutedEventArgs e)
-        {
-            kirja10.MoveUp(book10, 50);
+            painting2.Visibility = Visibility.Hidden;
+            painting1.Visibility = Visibility.Visible;
         }
         #endregion
 
@@ -313,6 +273,7 @@ namespace harjoitus.View
                 Console.WriteLine("Some other exception happend (Exception)");
             }
         }
+
         private void helpButton_Click(object sender, RoutedEventArgs e)
         {
             if (avain1.IsFound == false)
@@ -352,24 +313,20 @@ namespace harjoitus.View
         private void OnHint1Click(object sender, RoutedEventArgs e)
         {
             avain1.HintDisappear(hint1, avain1);
-            if (lehti.IsMoved == false)
-                lehti.MoveRight(newspaper, 70);
+            if (tyyny1.IsMoved == false)
+                tyyny1.MoveDownLeft(pillow1, 50, 50);
         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
             avain2.HintDisappear(hint2, avain2);
-            if (kirjat1.IsMoved == false)
-                kirjat1.MoveDown(books1, 70);
+            painting1.Visibility = Visibility.Hidden;
+            painting2.Visibility = Visibility.Visible;
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
             avain3.HintDisappear(hint3, avain3);
-            if (kirja2.IsMoved == false)
-                kirja2.MoveDown(book2, 50);
-            if (kirja3.IsMoved == false)
-                kirja3.MoveDown(book3, 50);
-            if (kirja4.IsMoved == false)
-                kirja4.MoveDown(book4, 50);
+            if (lappari.IsMoved == false)
+                lappari.MoveRight(laptop, 80);
         }
         #endregion
     }

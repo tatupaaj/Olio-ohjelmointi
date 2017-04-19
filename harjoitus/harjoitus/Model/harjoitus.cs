@@ -75,16 +75,90 @@ namespace harjoitus.Model
                 IsMoved = false;
             }
         }
+
+        public void MoveDownLeft(Button myButton, int x, int y)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - y);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + y);
+                IsMoved = false;
+            }
+        }
+
+        public void MoveDownRight(Button myButton, int x, int y)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + y);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - y);
+                IsMoved = false;
+            }
+        }
+
+        public void MoveUpRight(Button myButton, int x, int y)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + y);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - y);
+                IsMoved = false;
+            }
+        }
+
+        public void MoveUpLeft(Button myButton, int x, int y)
+        {
+            if (IsMoved == false)
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) - x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) - y);
+                IsMoved = true;
+            }
+            else
+            {
+                Canvas.SetTop(myButton, Canvas.GetTop(myButton) + x);
+                Canvas.SetLeft(myButton, Canvas.GetLeft(myButton) + y);
+                IsMoved = false;
+            }
+        }
     }
 
-    public class Avain
+    public class Avain : Esine
     {
         public int KeyNumber { get; set; }
         public bool IsFound { get; set; }
+        public bool IsHint { get; set; }
         public void Disappearing(Button myButton, Avain a)
         {
             myButton.Visibility = Visibility.Hidden;
             a.IsFound = true;
+        }
+        public void HintAppear(Button myButton, Avain a)
+        {
+                myButton.Visibility = Visibility.Visible;
+                a.IsHint = true;
+        }
+            public void HintDisappear(Button myButton, Avain a)
+        {
+            myButton.Visibility = Visibility.Hidden;
         }
     }
 }

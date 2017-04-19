@@ -21,31 +21,29 @@ using System.Xml.Serialization;
 namespace harjoitus.View
 {
     /// <summary>
-    /// Interaction logic for huone1.xaml
+    /// Interaction logic for huone4.xaml
     /// </summary>
-    public partial class huone11 : Window
+    public partial class huone44 : Window
     {
         Huone huone = new Huone();
         Avain avain1 = new Avain { KeyNumber = 1, IsFound = false };
         Avain avain2 = new Avain { KeyNumber = 2, IsFound = false };
         Avain avain3 = new Avain { KeyNumber = 3, IsFound = false };
-        Esine lehti = new Esine();
-        Esine tuoli = new Esine();
-        Esine kirjat1 = new Esine();
-        Esine kirjat2 = new Esine();
-        Esine kirja1 = new Esine();
-        Esine kirja2 = new Esine();
-        Esine kirja3 = new Esine();
-        Esine kirja4 = new Esine();
-        Esine kirja5 = new Esine();
-        Esine kirja6 = new Esine();
-        Esine kirja7 = new Esine();
-        Esine kirja8 = new Esine();
-        Esine kirja9 = new Esine();
-        Esine kirja10 = new Esine();
+        Esine tuoli1 = new Esine();
+        Esine tuoli2 = new Esine();
+        Esine olut1 = new Esine();
+        Esine olut2 = new Esine();
+        Esine pullo1 = new Esine();
+        Esine pullo2 = new Esine();
+        Esine pullo3 = new Esine();
+        Esine pullo4 = new Esine();
+        Esine pullo5 = new Esine();
+        Esine pullo6 = new Esine();
+        Esine pullo7 = new Esine();
+        Esine pullo8 = new Esine();
         public int numero = 0;
 
-        public huone11()
+        public huone44()
         {
             InitializeComponent();
             IniMyStuff();
@@ -202,7 +200,7 @@ namespace harjoitus.View
         private void OnDoor2Click(object sender, RoutedEventArgs e)
         {
 
-            huone2 h = new harjoitus.View.huone2();
+            huone5 h = new harjoitus.View.huone5();
             this.Close();
             h.ShowDialog();
 
@@ -210,61 +208,53 @@ namespace harjoitus.View
         #endregion
 
         #region furniture's work
-        private void OnNewspaperClick(object sender, RoutedEventArgs e)
+        private void OnChair1Click(object sender, RoutedEventArgs e)
         {
-            lehti.MoveRight(newspaper, 70);
+            tuoli1.MoveLeft(chair1, 100);
         }
-        private void OnChairClick(object sender, RoutedEventArgs e)
+        private void OnChair2Click(object sender, RoutedEventArgs e)
         {
-            tuoli.MoveLeft(chair, 100);
+            tuoli2.MoveRight(chair2, 50);
         }
-        private void OnBooks1Click(object sender, RoutedEventArgs e)
+        private void OnBottle1Click(object sender, RoutedEventArgs e)
         {
-            kirjat1.MoveDown(books1, 70);
+            pullo1.MoveUpRight(bottle1, 30, 20);
         }
-        private void OnBooks2Click(object sender, RoutedEventArgs e)
+        private void OnBottle2Click(object sender, RoutedEventArgs e)
         {
-            kirjat2.MoveRight(books2, 50);
+            pullo2.MoveDownLeft(bottle2, 30, 30);
         }
-        private void OnBook1Click(object sender, RoutedEventArgs e)
+        private void OnBottle3Click(object sender, RoutedEventArgs e)
         {
-            kirja1.MoveDown(book1, 50);
+            pullo3.MoveUpRight(bottle3, 10, 10);
         }
-        private void OnBook2Click(object sender, RoutedEventArgs e)
+        private void OnBottle4Click(object sender, RoutedEventArgs e)
         {
-            kirja2.MoveDown(book2, 50);
+            pullo4.MoveDownLeft(bottle4, 10, 30);
         }
-        private void OnBook3Click(object sender, RoutedEventArgs e)
+        private void OnBottle5Click(object sender, RoutedEventArgs e)
         {
-            kirja3.MoveDown(book3, 50);
+            pullo5.MoveUpRight(bottle5, 10, 10);
         }
-        private void OnBook4Click(object sender, RoutedEventArgs e)
+        private void OnBottle6Click(object sender, RoutedEventArgs e)
         {
-            kirja4.MoveDown(book4, 50);
+            pullo6.MoveDownLeft(bottle6, 10, 25);
         }
-        private void OnBook5Click(object sender, RoutedEventArgs e)
+        private void OnBottle7Click(object sender, RoutedEventArgs e)
         {
-            kirja5.MoveDown(book5, 50);
+            pullo7.MoveRight(bottle7, 20);
         }
-        private void OnBook6Click(object sender, RoutedEventArgs e)
+        private void OnBottle8Click(object sender, RoutedEventArgs e)
         {
-            kirja6.MoveDown(book6, 50);
+            pullo8.MoveUpRight(bottle8, 30, 20);
         }
-        private void OnBook7Click(object sender, RoutedEventArgs e)
+        private void OnBeer1Click(object sender, RoutedEventArgs e)
         {
-            kirja7.MoveDown(book7, 50);
+            olut1.MoveRight(beer1, 50);
         }
-        private void OnBook8Click(object sender, RoutedEventArgs e)
+        private void OnBeer2Click(object sender, RoutedEventArgs e)
         {
-            kirja8.MoveUp(book8, 50);
-        }
-        private void OnBook9Click(object sender, RoutedEventArgs e)
-        {
-            kirja9.MoveUp(book9, 50);
-        }
-        private void OnBook10Click(object sender, RoutedEventArgs e)
-        {
-            kirja10.MoveUp(book10, 50);
+            olut2.MoveLeft(beer2, 40);
         }
         #endregion
 
@@ -313,6 +303,7 @@ namespace harjoitus.View
                 Console.WriteLine("Some other exception happend (Exception)");
             }
         }
+
         private void helpButton_Click(object sender, RoutedEventArgs e)
         {
             if (avain1.IsFound == false)
@@ -352,24 +343,24 @@ namespace harjoitus.View
         private void OnHint1Click(object sender, RoutedEventArgs e)
         {
             avain1.HintDisappear(hint1, avain1);
-            if (lehti.IsMoved == false)
-                lehti.MoveRight(newspaper, 70);
+            if (olut1.IsMoved == false)
+                olut1.MoveRight(beer1, 50);
         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
             avain2.HintDisappear(hint2, avain2);
-            if (kirjat1.IsMoved == false)
-                kirjat1.MoveDown(books1, 70);
+            if (pullo1.IsMoved == false)
+                pullo1.MoveUpRight(bottle1, 30, 20);
+            if (pullo2.IsMoved == false)
+                pullo2.MoveDownLeft(bottle2, 30, 30);
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
             avain3.HintDisappear(hint3, avain3);
-            if (kirja2.IsMoved == false)
-                kirja2.MoveDown(book2, 50);
-            if (kirja3.IsMoved == false)
-                kirja3.MoveDown(book3, 50);
-            if (kirja4.IsMoved == false)
-                kirja4.MoveDown(book4, 50);
+            if (pullo3.IsMoved == false)
+                pullo3.MoveUpRight(bottle3, 10, 10);
+            if (pullo4.IsMoved == false)
+                pullo4.MoveDownLeft(bottle4, 10, 30);
         }
         #endregion
     }
