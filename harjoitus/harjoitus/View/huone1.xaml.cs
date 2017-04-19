@@ -64,35 +64,13 @@ namespace harjoitus.View
         // Menu key's work
         private void MenuAvaimet()
         {
-            switch (numero)
-            {
-                case 1:
-                    menuKey1.Visibility = Visibility.Visible;
-                    break;
-                case 2:
-                    menuKey2.Visibility = Visibility.Visible;
-                    break;
-                case 3:
-                    menuKey3.Visibility = Visibility.Visible;
-                    break;
-                default:
-                    break;
-            }
+            Toiminta.MenuKeys(numero, menuKey1, menuKey2, menuKey3);
         }
 
         // Message's work
-        private void MessageWork()
+        private void ViestinToiminta()
         {
-            switch(numero)
-            {
-                case 1: message.Text = "Still 2 keys to go!";
-                    break;
-                case 2: message.Text = "Only 1 key to go!";
-                    break;
-                case 3:
-                    message.Text = "All keys are found! You can get out of the room!";
-                    break;
-            }
+            Toiminta.MessageWork(numero, message);
         }
 
         #region Key's work
@@ -101,7 +79,7 @@ namespace harjoitus.View
             avain1.Disappearing(key1, avain1);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
@@ -109,33 +87,21 @@ namespace harjoitus.View
 
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
             avain3.Disappearing(key3, avain3);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         #endregion
 
         #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            foreach (var a in huone.Avaimet)
-            {
-                if (a.IsFound == false)
-                {
-                    message.Text = "Not enough keys!";
-                    break;
-                }
-                else
-                {
-                    door1.Visibility = Visibility.Hidden;
-                    door2.Visibility = Visibility.Visible;
-                }
-            }
+            huone.DoorWork(numero, message, door1, door2);
         }
 
         private void OnDoor2Click(object sender, RoutedEventArgs e)
@@ -293,22 +259,48 @@ namespace harjoitus.View
             avain1.HintDisappear(hint1, avain1);
             if (lehti.IsMoved == false)
                 lehti.MoveRight(newspaper, 70);
-        }
+            else
+            {
+                avain1.Disappearing(key1, avain1);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+                message.Text = message.Text + numero.ToString();
+            }
+         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
             avain2.HintDisappear(hint2, avain2);
             if (kirjat1.IsMoved == false)
                 kirjat1.MoveDown(books1, 70);
+            else
+            {
+                avain2.Disappearing(key2, avain2);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+                message.Text = message.Text + numero.ToString();
+            }
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
             avain3.HintDisappear(hint3, avain3);
             if (kirja2.IsMoved == false)
+            {
                 kirja2.MoveDown(book2, 50);
-            if (kirja3.IsMoved == false)
-                kirja3.MoveDown(book3, 50);
-            if (kirja4.IsMoved == false)
-                kirja4.MoveDown(book4, 50);
+                if (kirja3.IsMoved == false)
+                    kirja3.MoveDown(book3, 50);
+                if (kirja4.IsMoved == false)
+                    kirja4.MoveDown(book4, 50);
+            }
+            else
+            {
+                avain3.Disappearing(key3, avain3);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+                message.Text = message.Text + numero.ToString();
+            }
         }
         #endregion
     }

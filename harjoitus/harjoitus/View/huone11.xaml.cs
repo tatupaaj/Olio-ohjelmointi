@@ -90,7 +90,7 @@ namespace harjoitus.View
                 if (avain3.IsFound == true)
                     avain3.Disappearing(key3, avain3);
                 MenuAvaimetSave();
-                MessageWork();
+                ViestinToiminta();
             }
             catch (FileNotFoundException)
             {
@@ -140,7 +140,7 @@ namespace harjoitus.View
         }
 
         // Message's work
-        private void MessageWork()
+        private void ViestinToiminta()
         {
             switch (numero)
             {
@@ -162,7 +162,7 @@ namespace harjoitus.View
             avain1.Disappearing(key1, avain1);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
@@ -170,33 +170,21 @@ namespace harjoitus.View
 
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
             avain3.Disappearing(key3, avain3);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         #endregion
 
         #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            foreach (var a in huone.Avaimet)
-            {
-                if (a.IsFound == false)
-                {
-                    message.Text = "Not enough keys!";
-                    break;
-                }
-                else
-                {
-                    door1.Visibility = Visibility.Hidden;
-                    door2.Visibility = Visibility.Visible;
-                }
-            }
+            huone.DoorWork(numero, message, door1, door2);
         }
 
         private void OnDoor2Click(object sender, RoutedEventArgs e)
@@ -354,22 +342,45 @@ namespace harjoitus.View
             avain1.HintDisappear(hint1, avain1);
             if (lehti.IsMoved == false)
                 lehti.MoveRight(newspaper, 70);
+            else
+            {
+                avain1.Disappearing(key1, avain1);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
             avain2.HintDisappear(hint2, avain2);
             if (kirjat1.IsMoved == false)
                 kirjat1.MoveDown(books1, 70);
+            else
+            {
+                avain2.Disappearing(key2, avain2);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
             avain3.HintDisappear(hint3, avain3);
             if (kirja2.IsMoved == false)
+            {
                 kirja2.MoveDown(book2, 50);
-            if (kirja3.IsMoved == false)
-                kirja3.MoveDown(book3, 50);
-            if (kirja4.IsMoved == false)
-                kirja4.MoveDown(book4, 50);
+                if (kirja3.IsMoved == false)
+                    kirja3.MoveDown(book3, 50);
+                if (kirja4.IsMoved == false)
+                    kirja4.MoveDown(book4, 50);
+            }
+            else
+            {
+                avain3.Disappearing(key3, avain3);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         #endregion
     }

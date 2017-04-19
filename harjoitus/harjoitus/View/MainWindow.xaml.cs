@@ -33,7 +33,7 @@ namespace harjoitus.View
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
             //UusiPeli game = new harjoitus.View.UusiPeli();
-            huone1 h = new harjoitus.View.huone1();
+            huone5 h = new harjoitus.View.huone5();
             this.Close();
             //game.ShowDialog();
             h.ShowDialog();

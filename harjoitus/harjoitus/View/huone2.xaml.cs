@@ -71,7 +71,7 @@ namespace harjoitus.View
         }
 
         // Message's work
-        private void MessageWork()
+        private void ViestinToiminta()
         {
             switch (numero)
             {
@@ -93,7 +93,7 @@ namespace harjoitus.View
             avain1.Disappearing(key1, avain1);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
@@ -101,33 +101,21 @@ namespace harjoitus.View
 
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
             avain3.Disappearing(key3, avain3);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         #endregion
 
         #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            foreach (var a in huone.Avaimet)
-            {
-                if (a.IsFound == false)
-                {
-                    message.Text = "Not enough keys!";
-                    break;
-                }
-                else
-                {
-                    door1.Visibility = Visibility.Hidden;
-                    door2.Visibility = Visibility.Visible;
-                }
-            }
+            huone.DoorWork(numero, message, door1, door2);
         }
 
         private void OnDoor2Click(object sender, RoutedEventArgs e)
@@ -143,12 +131,15 @@ namespace harjoitus.View
         #region furniture's work
         private void OnChair1Click(object sender, RoutedEventArgs e)
         {
-            tuoli1.MoveRight(chair1, 100);
+            tuoli1.MoveRight(chair1, 150);
         }
         private void OnChair2Click(object sender, RoutedEventArgs e)
         {
+            bool tmp = vihko.IsMoved;
+            vihko.IsMoved = tuoli2.IsMoved;
             tuoli2.MoveLeft(chair2, 50);
             vihko.MoveLeft(copybook, 50);
+            vihko.IsMoved = tmp;
         }
         private void OnCopybookClick(object sender, RoutedEventArgs e)
         {
@@ -250,18 +241,39 @@ namespace harjoitus.View
             avain1.HintDisappear(hint1, avain1);
             if (kaktus.IsMoved == false)
                 kaktus.MoveDownLeft(cactus, 20, 30);
+            else
+            {
+                avain1.Disappearing(key1, avain1);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
             avain2.HintDisappear(hint2, avain2);
             if (paperi.IsMoved == false)
                 paperi.MoveDownRight(paper, 60, 40);
+            else
+            {
+                avain2.Disappearing(key2, avain2);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
             avain3.HintDisappear(hint3, avain3);
             if (tuoli1.IsMoved == false)
-                tuoli1.MoveRight(chair1, 50);
+                tuoli1.MoveRight(chair1, 150);
+            else
+            {
+                avain3.Disappearing(key3, avain3);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         #endregion
     }

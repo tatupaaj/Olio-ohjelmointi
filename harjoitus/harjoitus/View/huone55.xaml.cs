@@ -80,7 +80,7 @@ namespace harjoitus.View
                 if (avain3.IsFound == true)
                     avain3.Disappearing(key3, avain3);
                 MenuAvaimetSave();
-                MessageWork();
+                ViestinToiminta();
             }
             catch (FileNotFoundException)
             {
@@ -130,7 +130,7 @@ namespace harjoitus.View
         }
 
         // Message's work
-        private void MessageWork()
+        private void ViestinToiminta()
         {
             switch (numero)
             {
@@ -152,7 +152,7 @@ namespace harjoitus.View
             avain1.Disappearing(key1, avain1);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
@@ -160,39 +160,27 @@ namespace harjoitus.View
 
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
             avain3.Disappearing(key3, avain3);
             numero++;
             MenuAvaimet();
-            MessageWork();
+            ViestinToiminta();
         }
         #endregion
 
         #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            foreach (var a in huone.Avaimet)
-            {
-                if (a.IsFound == false)
-                {
-                    message.Text = "Not enough keys!";
-                    break;
-                }
-                else
-                {
-                    door1.Visibility = Visibility.Hidden;
-                    door2.Visibility = Visibility.Visible;
-                }
-            }
+            huone.DoorWork(numero, message, door1, door2);
         }
 
         private void OnDoor2Click(object sender, RoutedEventArgs e)
         {
 
-            huone1 h = new harjoitus.View.huone1();
+            PelinLopetus h = new harjoitus.View.PelinLopetus();
             this.Close();
             h.ShowDialog();
 
@@ -315,6 +303,13 @@ namespace harjoitus.View
             avain1.HintDisappear(hint1, avain1);
             if (tyyny1.IsMoved == false)
                 tyyny1.MoveDownLeft(pillow1, 50, 50);
+            else
+            {
+                avain1.Disappearing(key1, avain1);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
@@ -327,6 +322,13 @@ namespace harjoitus.View
             avain3.HintDisappear(hint3, avain3);
             if (lappari.IsMoved == false)
                 lappari.MoveRight(laptop, 80);
+            else
+            {
+                avain3.Disappearing(key3, avain3);
+                numero++;
+                MenuAvaimet();
+                ViestinToiminta();
+            }
         }
         #endregion
     }

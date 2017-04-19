@@ -17,6 +17,16 @@ namespace harjoitus.Model
         {
             Avaimet = new List<Avain>();
         }
+        public void DoorWork(int n, TextBlock text, Button b1, Button b2)
+        {
+            if (n != 3)
+                text.Text = "Not enough keys!";
+            else
+            {
+                b1.Visibility = Visibility.Hidden;
+                b2.Visibility = Visibility.Visible;
+            }
+        }
     }
 
     public class Esine
@@ -153,12 +163,49 @@ namespace harjoitus.Model
         }
         public void HintAppear(Button myButton, Avain a)
         {
-                myButton.Visibility = Visibility.Visible;
-                a.IsHint = true;
+            myButton.Visibility = Visibility.Visible;
+            a.IsHint = true;
         }
             public void HintDisappear(Button myButton, Avain a)
         {
             myButton.Visibility = Visibility.Hidden;
+            a.IsHint = false;
+        }
+    }
+
+    public static class Toiminta
+    {
+        public static void MenuKeys(int n, Image b1, Image b2, Image b3)
+        {
+            switch (n)
+            {
+                case 1:
+                    b1.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    b2.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    b2.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    break;
+            }
+        }
+        public static void MessageWork(int n, TextBlock m)
+        {
+            switch (n)
+            {
+                case 1:
+                    m.Text = "Still 2 keys to go!";
+                    break;
+                case 2:
+                    m.Text = "Only 1 key to go!";
+                    break;
+                case 3:
+                    m.Text = "All keys are found! You can get out of the room!";
+                    break;
+            }
         }
     }
 }
