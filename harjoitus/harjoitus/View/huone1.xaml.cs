@@ -11,12 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using harjoitus.ViewModel;
 using harjoitus.Model;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Serialization;
+using System.Media;
+using System.Windows.Threading;
 
 namespace harjoitus.View
 {
@@ -26,9 +23,9 @@ namespace harjoitus.View
     public partial class huone1 : Window
     {
         Huone huone = new Huone();
-        Avain avain1 = new Avain { KeyNumber = 1, IsFound = false };
-        Avain avain2 = new Avain { KeyNumber = 2, IsFound = false };
-        Avain avain3 = new Avain { KeyNumber = 3, IsFound = false };
+        Avain avain1 = new Avain { KeyNumber = 1 };
+        Avain avain2 = new Avain { KeyNumber = 2 };
+        Avain avain3 = new Avain { KeyNumber = 3 };
         Esine lehti = new Esine();
         Esine tuoli = new Esine();
         Esine kirjat1 = new Esine();
@@ -43,74 +40,97 @@ namespace harjoitus.View
         Esine kirja8 = new Esine();
         Esine kirja9 = new Esine();
         Esine kirja10 = new Esine();
-        public int numero = 0;
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+        int time = 0;
 
         public huone1()
         {
             InitializeComponent();
             IniMyStuff();
-            this.DataContext = new MainViewModel();    
+            TimerWork();
         }
-        // adding to list keys
+
         private void IniMyStuff()
         {
-            huone.HuoneNumero = 1;
-            huone.Avaimet.Add(avain1);
-            huone.Avaimet.Add(avain2);
-            huone.Avaimet.Add(avain3);
-            message.Text = "Find 3 keys to get out of the room.";
+            huone = Toiminta.ReadFromFile();
+            if (huone.IsSavedGame == false)
+            {
+                // creating new game
+                huone.RoomNumber = 1;
+                huone.Time = 0;
+                Toiminta.NewGame(huone, avain1, avain2, avain3, message);
+            }
+            else
+            {
+                // loading game
+                foreach (Avain a in huone.Avaimet)
+                {
+                    if (a.KeyNumber == 1)
+                        avain1 = a;
+                    else if (a.KeyNumber == 2)
+                        avain2 = a;
+                    else if (a.KeyNumber == 3)
+                        avain3 = a;
+                }
+                Toiminta.LoadGame(huone, avain1, avain2, avain3, key1, key2, key3, menuKey1, menuKey2, menuKey3, message);
+                time = 32 - huone.Time;
+            }
         }
 
-        // Menu key's work
-        private void MenuAvaimet()
+        #region Timer's work
+        public void TimerWork()
         {
-            Toiminta.MenuKeys(numero, menuKey1, menuKey2, menuKey3);
+            timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
         }
 
-        // Message's work
-        private void ViestinToiminta()
+        private void timer_Tick(object sender, EventArgs e)
         {
-            Toiminta.MessageWork(numero, message);
+            time++;
+            huone.Time = Toiminta.Timer(timeshow, time);
+            Toiminta.TimerWork(huone.Time, timeshow, this, timer);
         }
+
+        public void TimerStart()
+        {
+            timer.Start();
+        }
+
+        #endregion
 
         #region Key's work
         private void OnButton1Click(object sender, RoutedEventArgs e)
         {
-            avain1.Disappearing(key1, avain1);
-            numero++;
-            MenuAvaimet();
-            ViestinToiminta();
+            avain1.KeyDisappear(huone, key1, menuKey1, menuKey2, menuKey3, message);
+            
         }
         private void OnButton2Click(object sender, RoutedEventArgs e)
         {
-            avain2.Disappearing(key2, avain2);
-
-            numero++;
-            MenuAvaimet();
-            ViestinToiminta();
+            avain2.KeyDisappear(huone, key2, menuKey1, menuKey2, menuKey3, message);
         }
         private void OnButton3Click(object sender, RoutedEventArgs e)
         {
-            avain3.Disappearing(key3, avain3);
-            numero++;
-            MenuAvaimet();
-            ViestinToiminta();
+            avain3.KeyDisappear(huone, key3, menuKey1, menuKey2, menuKey3, message);
         }
         #endregion
 
         #region door's work
         private void OnDoor1Click(object sender, RoutedEventArgs e)
         {
-            huone.DoorWork(numero, message, door1, door2);
+            Toiminta.DoorWork(huone.KeyAmount, message, door1, door2, timer);
         }
 
         private void OnDoor2Click(object sender, RoutedEventArgs e)
         {
-            
+            SoundPlayer doorSound = new System.Media.SoundPlayer(Properties.Resources.door2);
+            doorSound.Play();
+            huone.IsSavedGame = false;
+            Toiminta.Save(huone);
             huone2 h = new harjoitus.View.huone2();
             this.Close();
             h.ShowDialog();
-
         }
         #endregion
 
@@ -177,114 +197,46 @@ namespace harjoitus.View
 
         private void exitButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow huone = new harjoitus.View.MainWindow();
-            this.Close();
-            huone.ShowDialog();
+            Toiminta.Exit(huone, this);
         }
 
-        private void saveButton_Click(object sender, RoutedEventArgs e)
+        private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                System.IO.StreamWriter outputFile = new System.IO.StreamWriter("huone.txt");
-                outputFile.WriteLine(huone.HuoneNumero);
-                outputFile.Close();
-                Stream writeStream = new FileStream("Avaimet.bin", FileMode.Create, FileAccess.Write, FileShare.None);
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Avain>));
-                serializer.Serialize(writeStream, huone.Avaimet);
-                writeStream.Close();
-                MainWindow h = new harjoitus.View.MainWindow();
-                this.Close();
-                h.ShowDialog();
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Console.WriteLine("Can't open file for writing (UnauthorizedAccessException)");
-            }
-            catch (ArgumentNullException)
-            {
-                Console.WriteLine("Opened stream is null (ArgumentNullException)");
-            }
-            catch (ArgumentException)
-            {
-                Console.WriteLine("Opened stream is not writable (ArgumentException)");
-            }
-            catch (IOException)
-            {
-                Console.WriteLine("An IO error happend (IOException)");
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Some other exception happend (Exception)");
-            }
+            Toiminta.Save(huone);
+            Toiminta.Pause(this, timer);
         }
+
+
         private void helpButton_Click(object sender, RoutedEventArgs e)
         {
-            if (avain1.IsFound == false)
-            {
-                if (avain1.IsHint == false)
-                    avain1.HintAppear(hint1, avain1);
-                else
-                {
-                    avain1.HintAppear(hint1, avain1);
-                    message.Text = "You can't see next hint until you take this one!";
-                }
-            }
-            else if (avain2.IsFound == false)
-            {
-                if (avain2.IsHint == false)
-                    avain2.HintAppear(hint2, avain2);
-                else
-                {
-                    avain2.HintAppear(hint2, avain2);
-                    message.Text = "You can't see next hint until you take this one!";
-                }
-            }
-            else if (avain3.IsFound == false)
-            {
-                if (avain3.IsHint == false)
-                    avain3.HintAppear(hint3, avain3);
-                else
-                {
-                    avain3.HintAppear(hint3, avain3);
-                    message.Text = "You can't see next hint until you take this one!";
-                }
-            }
+            Toiminta.HelpWork(avain1, avain2, avain3, hint1, hint2, hint3, message);
         }
         #endregion
 
         #region hint's work
         private void OnHint1Click(object sender, RoutedEventArgs e)
         {
-            avain1.HintDisappear(hint1, avain1);
+            avain1.HintDisappear(hint1);
             if (lehti.IsMoved == false)
                 lehti.MoveRight(newspaper, 70);
             else
             {
-                avain1.Disappearing(key1, avain1);
-                numero++;
-                MenuAvaimet();
-                ViestinToiminta();
-                message.Text = message.Text + numero.ToString();
+                avain1.KeyDisappear(huone, key1, menuKey1, menuKey2, menuKey3, message);
             }
          }
         private void OnHint2Click(object sender, RoutedEventArgs e)
         {
-            avain2.HintDisappear(hint2, avain2);
+            avain2.HintDisappear(hint2);
             if (kirjat1.IsMoved == false)
                 kirjat1.MoveDown(books1, 70);
             else
             {
-                avain2.Disappearing(key2, avain2);
-                numero++;
-                MenuAvaimet();
-                ViestinToiminta();
-                message.Text = message.Text + numero.ToString();
+                avain2.KeyDisappear(huone, key2, menuKey1, menuKey2, menuKey3, message);
             }
         }
         private void OnHint3Click(object sender, RoutedEventArgs e)
         {
-            avain3.HintDisappear(hint3, avain3);
+            avain3.HintDisappear(hint3);
             if (kirja2.IsMoved == false)
             {
                 kirja2.MoveDown(book2, 50);
@@ -295,11 +247,7 @@ namespace harjoitus.View
             }
             else
             {
-                avain3.Disappearing(key3, avain3);
-                numero++;
-                MenuAvaimet();
-                ViestinToiminta();
-                message.Text = message.Text + numero.ToString();
+                avain3.KeyDisappear(huone, key3, menuKey1, menuKey2, menuKey3, message);
             }
         }
         #endregion

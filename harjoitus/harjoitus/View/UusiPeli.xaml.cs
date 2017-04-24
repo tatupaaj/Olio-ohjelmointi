@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace harjoitus.View
 {
@@ -19,6 +20,7 @@ namespace harjoitus.View
     /// </summary>
     public partial class UusiPeli : Window
     {
+        SoundPlayer click = new System.Media.SoundPlayer(Properties.Resources.click);
         public UusiPeli()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace harjoitus.View
 
         private void btnNew_Click(object sender, RoutedEventArgs e)
         {
+            click.Play();
             huone1 h = new harjoitus.View.huone1();
             this.Close();
             h.ShowDialog();
@@ -33,6 +36,7 @@ namespace harjoitus.View
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)
         {
+            click.Play();
             MainWindow no = new harjoitus.View.MainWindow();
             this.Close();
             no.ShowDialog();

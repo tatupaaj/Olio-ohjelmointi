@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <StackPanel Background="#FFF1DAA8" Orientation="Horizontal">
-                <Button x:Name="saveButton" Content="Save"  HorizontalAlignment="Left" Height="51" Width="111" FontSize="26" FontWeight="Bold" Click="saveButton_Click">
+                <Button x:Name="pauseButton" Content="Pause"  HorizontalAlignment="Left" Height="51" Width="111" FontSize="26" FontWeight="Bold" Click="pauseButton_Click" Cursor="Pen">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
@@ -17,7 +17,8 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <TextBlock x:Name="message" Width="515" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="message" Width="428" FontSize="20" TextAlignment="Center"/>
+                <TextBlock x:Name="timeshow" Width="89" TextAlignment="Center" FontSize="30" FontWeight="Bold"/>
                 <Canvas Width="128">
                     <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="0" Canvas.Top="3" Height="48" Width="47"/>
                     <Image Source="pack://application:,,,/Resources/KeyNotFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47"/>
@@ -26,7 +27,7 @@
                     <Image Name="menuKey2" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="40" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
                     <Image Name="menuKey3" Source="pack://application:,,,/Resources/KeyFound.png" Canvas.Left="80" Canvas.Top="3" Height="48" Width="47" Visibility="Hidden"/>
                 </Canvas>
-                <Button x:Name="helpButton" Margin="10,0,20,0" Content="?" FontSize="26" FontWeight="Bold" Width="95" Click="helpButton_Click">
+                <Button x:Name="helpButton" Margin="10,0,20,0" Content="?" FontSize="26" FontWeight="Bold" Width="95" Click="helpButton_Click" Cursor="Pen">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
@@ -34,7 +35,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="exitButton" Content="Exit" HorizontalAlignment="Left" Height="51" Width="114" FontSize="26" FontWeight="Bold" Click="exitButton_Click">
+                <Button x:Name="exitButton" Content="Exit" HorizontalAlignment="Left" Height="51" Width="114" FontSize="26" FontWeight="Bold" Click="exitButton_Click" Cursor="Pen">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
@@ -45,7 +46,7 @@
             </StackPanel>
             <Canvas>
                 <Image Source="pack://application:,,,/Resources/2.png" Width="997" Height="521" Canvas.Top="3"/>
-                <Button Name="key1" Click="OnButton1Click" Canvas.Left="101" Canvas.Top="267" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="39" Height="29" RenderTransformOrigin="0.5,0.5">
+                <Button Name="key1" Click="OnButton1Click" Canvas.Left="103" Canvas.Top="272" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="30" Height="21" RenderTransformOrigin="0.5,0.5">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -54,13 +55,13 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Button.RenderTransform>
-                    <Image Source="pack://application:,,,/Resources/key.png" Width="41" Height="26"></Image>
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="29" Height="19"></Image>
                 </Button>
-                <Button Name="key2" Click="OnButton2Click" Canvas.Left="90" Canvas.Top="412" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="36" Height="29">
-                    <Image Source="pack://application:,,,/Resources/key.png" Width="32" Height="26"></Image>
+                <Button Name="key2" Click="OnButton2Click" Canvas.Left="95" Canvas.Top="415" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="26" Height="21">
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="26" Height="19"></Image>
                 </Button>
-                <Button Name="key3" Click="OnButton3Click" Canvas.Left="360" Canvas.Top="308" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="36" Height="28">
-                    <Image Source="pack://application:,,,/Resources/key.png" Width="35" Height="25" RenderTransformOrigin="0.5,0.5">
+                <Button Name="key3" Click="OnButton3Click" Canvas.Left="360" Canvas.Top="313" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Width="30" Height="23">
+                    <Image Source="pack://application:,,,/Resources/key.png" Width="27" Height="22" RenderTransformOrigin="0.5,0.5">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -83,7 +84,7 @@
                 <Button Name="cactus" Click="OnCactusClick" Canvas.Left="92" Canvas.Top="197" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="101" Width="52" >
                     <Image Source="pack://application:,,,/Resources/cactus.png" Height="93" Width="52"></Image>
                 </Button>
-                <Button Name="chair1" Click="OnChair1Click" Canvas.Left="295" Canvas.Top="268" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="233" Width="142" >
+                <Button Name="chair1" Click="OnChair1Click" Canvas.Left="280" Canvas.Top="268" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="233" Width="142" >
                     <Image Source="pack://application:,,,/Resources/chair.png" Height="218" Width="132"></Image>
                 </Button>
                 <Button Name="chair2" Click="OnChair2Click" Canvas.Left="603" Canvas.Top="285" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Height="236" Width="142" >

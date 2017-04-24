@@ -55,41 +55,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\huone11.xaml.cs">
-      <DependentUpon>huone11.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\huone22.xaml.cs">
-      <DependentUpon>huone22.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\huone3.xaml.cs">
       <DependentUpon>huone3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\huone33.xaml.cs">
-      <DependentUpon>huone33.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\huone4.xaml.cs">
       <DependentUpon>huone4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\huone44.xaml.cs">
-      <DependentUpon>huone44.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\huone5.xaml.cs">
       <DependentUpon>huone5.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\huone55.xaml.cs">
-      <DependentUpon>huone55.xaml</DependentUpon>
+    <Compile Include="View\pelinHavitys.xaml.cs">
+      <DependentUpon>pelinHavitys.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PelinLopetus.xaml.cs">
       <DependentUpon>PelinLopetus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\tauko.xaml.cs">
+      <DependentUpon>tauko.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UusiPeli.xaml.cs">
       <DependentUpon>UusiPeli.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WMPLib\WindowsMediaPlayer.cs" />
     <Page Include="View\huone1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\huone11.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -97,15 +85,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\huone22.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\huone3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\huone33.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,15 +93,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\huone44.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\huone5.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\huone55.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +106,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\harjoitus.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\huone1.xaml.cs">
       <DependentUpon>huone1.xaml</DependentUpon>
     </Compile>
@@ -145,7 +116,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\pelinHavitys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PelinLopetus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\tauko.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +238,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\hint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lose.wav" />
+    <None Include="Resources\tada.wav" />
+    <None Include="Resources\success.wav" />
+    <None Include="Resources\door2.wav" />
+    <None Include="Resources\click.wav" />
+    <None Include="Resources\action.wav" />
+    <None Include="Resources\clock.wav" />
+    <Content Include="Resources\door.wav" />
+    <None Include="Resources\fail.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

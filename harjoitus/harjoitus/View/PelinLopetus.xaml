@@ -17,9 +17,8 @@
             <TextBlock x:Name="txbGetOut" Text="Get Out..." FontSize="50" HorizontalAlignment="Center" Foreground="#FF0C0C0C"/>
             <StackPanel Width="500" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock x:Name="txbInfo" Text="Congratulations! You escaped the evil teacher." TextWrapping="Wrap" FontSize="20" Margin="30,10" Height="60" />
-                <TextBlock x:Name="txbSure" Text= "Exit to main menu" FontSize="20" HorizontalAlignment="Center" Margin="10" Height="60" Width="350" VerticalAlignment="Center" TextAlignment="Center" />
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="btnExit" Content="Exit" FontSize="20" Margin="225,20,50,20" Width="50" Height="30" Click="btnExit_Click" >
+                    <Button x:Name="btnExit" Content="Exit" FontSize="20" Margin="225,20,50,20" Width="50" Height="30" Click="btnExit_Click" Cursor="Pen" >
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>

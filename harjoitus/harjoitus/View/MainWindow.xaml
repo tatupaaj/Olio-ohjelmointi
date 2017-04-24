@@ -15,7 +15,7 @@
         </Grid.Background>
         <StackPanel HorizontalAlignment="Center">
             <TextBlock x:Name="txtGetOut" Text="Get Out..." FontSize="50" HorizontalAlignment="Center" Foreground="#FF0C0C0C"/>
-            <Button x:Name="btnNewGame" Content="New Game" FontSize="20" Margin="50,20,50,10" Click="btnNewGame_Click" >
+            <Button x:Name="btnNewGame" Content="New Game" FontSize="20" Margin="50,20,50,10" Click="btnNewGame_Click" Cursor="Pen" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -23,7 +23,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnLoadGame" Content="Load Game" FontSize="20" Margin="50,20,50,10" Click="btnLoadGame_Click" >
+            <Button x:Name="btnLoadGame" Content="Load Game" FontSize="20" Margin="50,20,50,10" Click="btnLoadGame_Click" Cursor="Pen" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -31,7 +31,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnExit" Content="Exit" FontSize="20" Margin="50,20,50,10" Click="btnExit_Click" >
+            <Button x:Name="btnExit" Content="Exit" FontSize="20" Margin="50,20,50,10" Click="btnExit_Click" Cursor="Pen" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>

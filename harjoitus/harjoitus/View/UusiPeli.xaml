@@ -14,10 +14,11 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel HorizontalAlignment="Center">
-            <TextBlock x:Name="txbGetOut" Text="Get Out..." FontSize="50" HorizontalAlignment="Center" Foreground="#FF0C0C0C"/>
-            <TextBlock x:Name="txbInfo" Text="Are you sure want to start new game?" FontSize="20" HorizontalAlignment="Center" Margin="10" />
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="btnNew" Content="Yes" FontSize="20" Margin="68,20,50,20" Width="50" Click="btnNew_Click" >
+            <TextBlock x:Name="txbGetOut" Text="Get Out..." FontSize="50" HorizontalAlignment="Center" Foreground="#FF0C0C0C" FontWeight="Bold"/>
+            <TextBlock x:Name="txbInfo" Text="In this game you have to pass 5 rooms to escape from the teacher. In every room you need to find 3 keys in 30 seconds to go forward or teacher will catch you." FontSize="20" HorizontalAlignment="Center" Margin="10" Height="87" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBlock Text="Are you ready???" FontSize="20" HorizontalAlignment="Center" Margin="10" Height="33" FontWeight="Black" TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Width="368" Height="63">
+                <Button x:Name="btnNew" Content="Of course!" FontSize="20" Width="160" Height="40" Margin="10" Click="btnNew_Click" Cursor="Pen" FontWeight="Bold">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
@@ -25,7 +26,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnLoadGame" Content="No" FontSize="20" Margin="50,20,50,20" Width="50" Height="30" Click="btnLoadGame_Click" >
+                <Button x:Name="btnLoadGame" Content="No, i am scared!" FontSize="20" Margin="10" Width="160" Height="40" Click="btnLoadGame_Click" Cursor="Pen" FontWeight="Bold">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>

@@ -17,6 +17,7 @@ using harjoitus.Model;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Media;
 
 namespace harjoitus.View
 {
@@ -25,6 +26,8 @@ namespace harjoitus.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        Huone huone = new Model.Huone();
+        SoundPlayer click = new System.Media.SoundPlayer(Properties.Resources.click);
         public MainWindow()
         {
             InitializeComponent();
@@ -32,58 +35,57 @@ namespace harjoitus.View
 
         private void btnNewGame_Click(object sender, RoutedEventArgs e)
         {
+            click.Play();
+            huone.IsSavedGame = false;
+            Toiminta.Save(huone);
             //UusiPeli game = new harjoitus.View.UusiPeli();
-            huone5 h = new harjoitus.View.huone5();
+            huone1 h = new harjoitus.View.huone1();
             this.Close();
             //game.ShowDialog();
             h.ShowDialog();
-
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
+            click.Play();
             this.Close();
         }
 
         private void btnLoadGame_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                string text = System.IO.File.ReadAllText("huone.txt");
-                int tmp = Convert.ToInt32(text);
-                switch (tmp)
+            click.Play();
+            huone = Toiminta.ReadFromFile();
+            if (huone.IsSavedGame == false)
+                MessageBox.Show("No saved game!");
+            else
+                switch (huone.RoomNumber)
                 {
                     case 1:
-                        huone11 huone1 = new harjoitus.View.huone11();
+                        huone1 huone1 = new harjoitus.View.huone1();
                         this.Close();
                         huone1.ShowDialog();
                         break;
                     case 2:
-                        huone22 huone2 = new harjoitus.View.huone22();
+                        huone2 huone2 = new harjoitus.View.huone2();
                         this.Close();
                         huone2.ShowDialog();
                         break;
                     case 3:
-                        huone33 huone3 = new harjoitus.View.huone33();
+                        huone3 huone3 = new harjoitus.View.huone3();
                         this.Close();
                         huone3.ShowDialog();
                         break;
                     case 4:
-                        huone44 huone4 = new harjoitus.View.huone44();
+                        huone4 huone4 = new harjoitus.View.huone4();
                         this.Close();
                         huone4.ShowDialog();
                         break;
                     case 5:
-                        huone55 huone5 = new harjoitus.View.huone55();
+                        huone5 huone5 = new harjoitus.View.huone5();
                         this.Close();
                         huone5.ShowDialog();
                         break;
                 }
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("File not found (FileNotFoundException)");
-            }
         }
     }
 }
