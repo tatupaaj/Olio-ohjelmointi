@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using harjoitus.View;
+
 
 namespace harjoitus
 {
@@ -13,5 +15,9 @@ namespace harjoitus
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+
+        }
     }
 }

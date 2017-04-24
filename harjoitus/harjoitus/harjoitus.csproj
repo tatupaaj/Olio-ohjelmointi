@@ -55,11 +55,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="huone1.xaml">
+    <Compile Include="View\huone3.xaml.cs">
+      <DependentUpon>huone3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone4.xaml.cs">
+      <DependentUpon>huone4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\huone5.xaml.cs">
+      <DependentUpon>huone5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\pelinHavitys.xaml.cs">
+      <DependentUpon>pelinHavitys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PelinLopetus.xaml.cs">
+      <DependentUpon>PelinLopetus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\tauko.xaml.cs">
+      <DependentUpon>tauko.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UusiPeli.xaml.cs">
+      <DependentUpon>UusiPeli.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WMPLib\WindowsMediaPlayer.cs" />
+    <Page Include="View\huone1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\huone2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\huone5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -67,14 +105,33 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="harjoitusClass.cs" />
-    <Compile Include="huone1.xaml.cs">
+    <Compile Include="Model\harjoitus.cs" />
+    <Compile Include="View\huone1.xaml.cs">
       <DependentUpon>huone1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\huone2.xaml.cs">
+      <DependentUpon>huone2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\pelinHavitys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PelinLopetus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\tauko.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UusiPeli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -102,6 +159,96 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\newspaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\doorinside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyNotFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\keyFound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3.png" />
+    <Resource Include="Resources\4.png" />
+    <Resource Include="Resources\5.png" />
+    <Resource Include="Resources\chair.png" />
+    <Resource Include="Resources\chair2.png" />
+    <Resource Include="Resources\tableRuokailu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chairBar.png" />
+    <Resource Include="Resources\chairBar2.png" />
+    <Resource Include="Resources\chairKoti.png" />
+    <Resource Include="Resources\laptop.png" />
+    <Resource Include="Resources\painting.png" />
+    <Resource Include="Resources\pillow.png" />
+    <Resource Include="Resources\tableBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\b1.png" />
+    <Resource Include="Resources\b2.png" />
+    <Resource Include="Resources\b3.png" />
+    <Resource Include="Resources\b4.png" />
+    <Resource Include="Resources\beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\plate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\banan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cactus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copybook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\book1.png" />
+    <Resource Include="Resources\book2.png" />
+    <Resource Include="Resources\book3.png" />
+    <Resource Include="Resources\book4.png" />
+    <Resource Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lose.wav" />
+    <None Include="Resources\tada.wav" />
+    <None Include="Resources\success.wav" />
+    <None Include="Resources\door2.wav" />
+    <None Include="Resources\click.wav" />
+    <None Include="Resources\action.wav" />
+    <None Include="Resources\clock.wav" />
+    <Content Include="Resources\door.wav" />
+    <None Include="Resources\fail.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
