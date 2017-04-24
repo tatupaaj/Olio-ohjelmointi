@@ -38,11 +38,9 @@ namespace harjoitus.View
             click.Play();
             huone.IsSavedGame = false;
             Toiminta.Save(huone);
-            //UusiPeli game = new harjoitus.View.UusiPeli();
-            huone1 h = new harjoitus.View.huone1();
+            UusiPeli game = new harjoitus.View.UusiPeli();
             this.Close();
-            //game.ShowDialog();
-            h.ShowDialog();
+            game.ShowDialog();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
